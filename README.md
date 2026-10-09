@@ -4,6 +4,13 @@ RoadSense is a prototype municipal pothole incident review tool. It builds on th
 
 > **Prototype status:** The application currently uses synthetic records and illustrative repair rates. It is not connected to municipal systems, authorized camera feeds, or a production identity provider. Do not use the sample costs or incident data for operational decisions.
 
+## Screenshots
+
+<p align="center">
+  <img src="temp/img1.png" alt="RoadSense screenshot 1" width="48%" />
+  <img src="temp/img2.png" alt="RoadSense screenshot 2" width="48%" />
+</p>
+
 ## Current Features
 
 - Interactive React dashboard with an Esri street map and incident markers. Map tiles and data sources are attributed in the map.
