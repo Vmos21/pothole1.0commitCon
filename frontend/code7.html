@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>RoadWise AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#eff4ff", "on-primary-fixed-variant": "#3f465c", "secondary-fixed": "#ffddb8", "primary-fixed": "#dae2fd", "inverse-primary": "#bec6e0", "tertiary-fixed-dim": "#93ccff", "on-error-container": "#93000a", "on-surface-variant": "#45464d", "on-tertiary-fixed": "#001d31", "on-tertiary-fixed-variant": "#004b73", "inverse-surface": "#213145", "on-tertiary": "#ffffff", "primary-fixed-dim": "#bec6e0", "surface-tint": "#565e74", "inverse-on-surface": "#eaf1ff", "outline": "#76777d", "secondary": "#855300", "on-secondary-container": "#684000", "surface-bright": "#f8f9ff", "surface-container-high": "#dce9ff", "on-background": "#0b1c30", "tertiary-fixed": "#cce5ff", "on-error": "#ffffff", "on-primary-container": "#7c839b", "on-primary": "#ffffff", "error": "#ba1a1a", "on-surface": "#0b1c30", "surface-container-highest": "#d3e4fe", "on-secondary": "#ffffff", "background": "#f8f9ff", "surface-dim": "#cbdbf5", "surface-container-lowest": "#ffffff", "primary": "#000000", "secondary-container": "#fea619", "tertiary": "#000000", "error-container": "#ffdad6", "tertiary-container": "#001d31", "surface-variant": "#d3e4fe", "on-tertiary-container": "#188ace", "on-primary-fixed": "#131b2e", "outline-variant": "#c6c6cd", "primary-container": "#131b2e", "secondary-fixed-dim": "#ffb95f", "on-secondary-fixed-variant": "#653e00", "on-secondary-fixed": "#2a1700", "surface": "#f8f9ff", "surface-container": "#e5eeff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-sm": "1rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xl": "2rem", "margin": "2rem", "gutter": "1.5rem", "space-lg": "1.5rem", "margin-lg": "3rem", "margin-sm": "1rem", "space-xs": "0.25rem" }, "fontFamily": { "label-sm": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "title-sm": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "title-md": ["Inter"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Inter"], "code-sm": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Inter"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "code-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="RoadWise AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XLdD17Nx3wtOikKjjeJHupsQlb4X2Tnh0NlKFMWi05T0ozE-745sg18T4sfeHpNrpaOGdC9Toru8I6C9yOOikGV3kAjDenYW0-6Tz7nh00jHBzjT9eCE1yHvpXAOs0JZBcsFMYaKPOpHbd6EGM5fEktavYEs-FBn1PxD2SivnJeS_X0nXfGMYs6aAsgxd5FFBgI91S2wUAeIQPpYW3VIsU-rv71BcBQZxEOjQrGdAvspmTAuz_m3ESqP77"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">RoadWise<span class="text-secondary-container">.AI</span></span></a><span class="hidden lg:inline-flex items-center px-space-sm py-space-xs rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase">Civic Portal</span></div><nav class="hidden md:flex items-center gap-space-xs" data-active-classes="bg-surface-container text-on-surface font-title-sm text-title-sm rounded-lg"><a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#">Home</a><a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="report-a-pothole" href="#">Report a Pothole</a><a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="track-report" href="#">Track Report</a><a aria-current="page" class="px-space-md py-space-sm transition-colors bg-surface-container text-on-surface font-title-sm text-title-sm rounded-lg" data-path="public-road-map" href="#">Public Road Map</a><a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="how-it-works" href="#">How It Works</a></nav><div class="flex items-center gap-space-sm"><a class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-primary-container text-on-primary rounded-lg font-title-sm text-title-sm shadow-[0_1px_8px_rgba(0,0,0,0.04)] hover:bg-inverse-surface transition-colors" data-path="authority-login" href="#"><span class="material-symbols-outlined text-title-sm">lock</span><span>Authority Login</span></a></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-16rem)]"><div class="flex flex-col w-full">
+<!-- Page Context & Spatial Header -->
+<section class="w-full bg-surface-container-low py-space-xl px-margin">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-space-lg">
+<div class="space-y-space-xs">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-highest text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Metropolitan GIS Telemetry</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface">Explore Road Conditions</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+          See reported potholes and check their latest available status across municipal wards with synchronized civil dispatch logs.
+        </p>
+</div>
+<!-- Quick Triage Metric Badges -->
+<div class="flex items-center gap-space-md self-start md:self-auto">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<div class="font-title-sm text-title-sm text-on-surface">1,482 Active Hazards</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">88.4% Ward Verification Rate</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter & Mode Switcher Bar -->
+<section class="w-full bg-surface-container-lowest shadow-sm z-30">
+<div class="max-w-7xl mx-auto px-margin py-space-md flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Search & Geolocation -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm flex-1">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container" id="searchInput" placeholder="Search by street, landmark, or locality (e.g. Ring Road, Indiranagar)..." type="text"/>
+</div>
+<button class="h-10 px-space-md bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg font-title-sm text-title-sm flex items-center justify-center gap-space-xs transition-colors shrink-0" id="btnGeoLocate" onclick="triggerGeoFeedback()">
+<span class="material-symbols-outlined text-title-sm">my_location</span>
+<span>Use My Location</span>
+</button>
+</div>
+<!-- Filter Dropdowns & View Modes -->
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<!-- Severity Selector -->
+<div class="relative">
+<select class="h-10 pl-3 pr-8 bg-surface-container-low rounded-lg font-title-sm text-title-sm text-on-surface appearance-none focus:outline-none cursor-pointer" id="severityFilter" onchange="filterPotholes()">
+<option value="all">All Severities</option>
+<option value="critical">🔴 Critical Risk</option>
+<option value="high">🟠 High Severity</option>
+<option value="medium">🟡 Medium Severity</option>
+<option value="low">⚪ Low Severity</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-body-md">expand_more</span>
+</div>
+<!-- Status Selector -->
+<div class="relative">
+<select class="h-10 pl-3 pr-8 bg-surface-container-low rounded-lg font-title-sm text-title-sm text-on-surface appearance-none focus:outline-none cursor-pointer" id="statusFilter" onchange="filterPotholes()">
+<option value="all">All Statuses</option>
+<option value="reported">Reported</option>
+<option value="review">Under Review</option>
+<option value="scheduled">Scheduled</option>
+<option value="fixed">🟢 Fixed / Verified</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-body-md">expand_more</span>
+</div>
+<button class="h-10 px-space-sm text-on-surface-variant hover:text-on-surface font-title-sm text-title-sm transition-colors" onclick="resetFilters()">
+          Clear Filters
+        </button>
+<!-- View Switch Toggle -->
+<div class="flex items-center bg-surface-container p-1 rounded-lg ml-auto sm:ml-0">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-on-surface shadow-sm font-title-sm text-title-sm flex items-center gap-space-xs transition-all" id="tabMap" onclick="switchView('map')">
+<span class="material-symbols-outlined text-title-sm">map</span>
+<span>Map View</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-title-sm text-title-sm flex items-center gap-space-xs transition-all" id="tabList" onclick="switchView('list')">
+<span class="material-symbols-outlined text-title-sm">view_agenda</span>
+<span>List View</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Geo Toast / Feedback Message -->
+<div class="hidden px-margin py-space-xs bg-surface-container-highest text-on-surface-variant text-center font-body-sm text-body-sm transition-all" id="geoToast">
+<span class="inline-flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-body-md text-secondary-container">gps_fixed</span>
+<span>Triangulating closest municipal ward: Indiranagar - 100ft Road Corridor (Ward #112). Accuracy: ±4m.</span>
+</span>
+</div>
+</section>
+<!-- Content Container: Map & Dual Perspective Views -->
+<div class="max-w-7xl mx-auto w-full px-margin py-space-lg flex flex-col gap-space-lg">
+<!-- PRIMARY INTERACTIVE MAP INTERFACE -->
+<div class="relative w-full h-[640px] rounded-xl overflow-hidden bg-surface-container-low shadow-sm" id="mapViewContainer">
+<!-- Spatial Static Ground Texture Base -->
+<div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-40 mix-blend-multiply" data-location="Bengaluru, Karnataka, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZRNp4uGWXnw0lU74hspwntk0fn27bP0YRltfuLGfAM7UiDAggaQSTqwHlPIWsK7OaYtlyes42BeovQ3rfFl3rxL0FgNyVXYlWM4sUhjCdHOwxaTj2LctTrNEA_U1iL6_whIi5GDFvoEMViLFfhZ_8vPjGwestkw8d5TKIytZpFaRWCNrTu31Vtzo-UnwTyvTrrdZmvwvTQgmVpJqkET8UgwBIz6VTrE9ndJoh_kD28CocxeSJvSKCGA')"></div>
+<!-- Stylized Vector Cartography Overlay Grid & Roads -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="120" id="roadGrid" patternunits="userSpaceOnUse" width="120">
+<path d="M 120 0 L 0 0 0 120" fill="none" stroke="#dce9ff" stroke-width="1"></path>
+</pattern>
+</defs>
+<rect fill="url(#roadGrid)" height="100%" width="100%"></rect>
+<!-- Major Arterial Highways -->
+<path d="M -50 150 C 200 180, 500 110, 800 240 S 1200 420, 1400 400" fill="none" opacity="0.6" stroke="#bec6e0" stroke-linecap="round" stroke-width="12"></path>
+<path d="M -50 150 C 200 180, 500 110, 800 240 S 1200 420, 1400 400" fill="none" stroke="#f8f9ff" stroke-linecap="round" stroke-width="6"></path>
+<!-- Cross Arterials -->
+<path d="M 400 -50 C 420 200, 380 400, 520 700" fill="none" opacity="0.6" stroke="#bec6e0" stroke-linecap="round" stroke-width="8"></path>
+<path d="M 850 -20 C 780 180, 890 350, 950 680" fill="none" opacity="0.5" stroke="#bec6e0" stroke-width="7"></path>
+<path d="M 100 500 C 450 480, 750 560, 1300 520" fill="none" opacity="0.5" stroke="#bec6e0" stroke-width="6"></path>
+<!-- Waterbody Contour Indication -->
+<path d="M 920 180 Q 980 150 1040 190 T 1120 260 T 1050 340 T 960 300 Z" fill="#cce5ff" opacity="0.75"></path>
+</svg>
+<!-- Neighborhood Labels -->
+<div class="absolute top-16 left-28 pointer-events-none">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface-variant/30 tracking-widest uppercase">Indiranagar Sector 2</span>
+</div>
+<div class="absolute bottom-28 left-40 pointer-events-none">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface-variant/30 tracking-widest uppercase">Koramangala 4th Blk</span>
+</div>
+<div class="absolute top-36 right-36 pointer-events-none">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface-variant/30 tracking-widest uppercase">Bellandur Lake Ward</span>
+</div>
+<!-- MAP CONTROLS (Top Right) -->
+<div class="absolute top-4 right-4 z-20 flex flex-col gap-space-xs bg-surface-container-lowest p-1 rounded-lg shadow-md">
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container-low flex items-center justify-center text-on-surface" onclick="mapZoom(1)" title="Zoom In">
+<span class="material-symbols-outlined text-body-md">add</span>
+</button>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container-low flex items-center justify-center text-on-surface" onclick="mapZoom(-1)" title="Zoom Out">
+<span class="material-symbols-outlined text-body-md">remove</span>
+</button>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container-low flex items-center justify-center text-on-surface" onclick="resetMapCenter()" title="Recenter Ward">
+<span class="material-symbols-outlined text-body-md">filter_center_focus</span>
+</button>
+</div>
+<!-- MAP LEGEND (Bottom Left Floating Overlay) -->
+<div class="absolute bottom-4 left-4 z-20 bg-surface-container-lowest/95 backdrop-blur-md p-space-md rounded-xl shadow-md max-w-xs">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Severity Classification</span>
+<span class="material-symbols-outlined text-body-sm text-on-surface-variant">layers</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface">
+<span class="w-3 h-3 rounded-full bg-error ring-4 ring-error-container"></span>
+<span>Critical (High accident/structural risk)</span>
+</div>
+<div class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface">
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+<span>High Severity (Rim &amp; chassis hazard)</span>
+</div>
+<div class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface">
+<span class="w-3 h-3 rounded-full bg-secondary-fixed-dim"></span>
+<span>Medium Severity (Surface erosion)</span>
+</div>
+<div class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface">
+<span class="w-3 h-3 rounded-full bg-outline-variant"></span>
+<span>Low Severity (Minor spalling)</span>
+</div>
+<div class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface">
+<span class="w-3 h-3 rounded-full bg-on-tertiary-container"></span>
+<span>Fixed / Verified Remediation</span>
+</div>
+</div>
+</div>
+<!-- POTHOLE MARKERS -->
+<!-- Marker 1: Selected Hotspot (Critical) -->
+<div class="absolute left-[34%] top-[42%] -translate-x-1/2 -translate-y-1/2 cursor-pointer z-20 group" id="marker-1" onclick="selectMarker(1)">
+<span class="relative flex h-8 w-8 items-center justify-center">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-60"></span>
+<span class="relative inline-flex rounded-full h-6 w-6 bg-error items-center justify-center shadow-lg ring-2 ring-surface-container-lowest text-on-error">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+</span>
+</span>
+</div>
+<!-- Marker 2: High Severity (Indiranagar) -->
+<div class="absolute left-[58%] top-[28%] -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10 group" id="marker-2" onclick="selectMarker(2)">
+<div class="w-6 h-6 rounded-full bg-secondary-container ring-2 ring-surface-container-lowest shadow-md flex items-center justify-center text-on-secondary">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+</div>
+</div>
+<!-- Marker 3: Medium Severity (Ring Road Junction) -->
+<div class="absolute left-[72%] top-[54%] -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10 group" id="marker-3" onclick="selectMarker(3)">
+<div class="w-5 h-5 rounded-full bg-secondary-fixed-dim ring-2 ring-surface-container-lowest shadow-sm flex items-center justify-center text-on-secondary-fixed">
+<span class="w-2 h-2 rounded-full bg-on-secondary-fixed"></span>
+</div>
+</div>
+<!-- Marker 4: Fixed / Repaired (Bellandur) -->
+<div class="absolute left-[82%] top-[34%] -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10 group" id="marker-4" onclick="selectMarker(4)">
+<div class="w-6 h-6 rounded-full bg-on-tertiary-container ring-2 ring-surface-container-lowest shadow-sm flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[13px]">check</span>
+</div>
+</div>
+<!-- Marker 5: Low Severity (Old Airport Road) -->
+<div class="absolute left-[22%] top-[25%] -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10 group" id="marker-5" onclick="selectMarker(5)">
+<div class="w-5 h-5 rounded-full bg-outline-variant ring-2 ring-surface-container-lowest shadow-sm flex items-center justify-center text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-on-surface-variant"></span>
+</div>
+</div>
+<!-- INTERACTIVE POPOVER CARD: Marker 1 Selected (Floating Overlay on Map) -->
+<div class="absolute left-[34%] top-[42%] translate-x-4 -translate-y-1/2 z-30 w-80 sm:w-96 bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden transition-all duration-200" id="popoverCard">
+<!-- Card Header with Severity Pill -->
+<div class="p-space-md bg-surface-container flex items-start justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Critical Risk
+              </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">#RW-2026-00342</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">80ft Main Road, Koramangala</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ward 151 • 4th Block Intersection</p>
+</div>
+<button class="w-7 h-7 rounded-full bg-surface-container-highest hover:bg-surface-variant flex items-center justify-center text-on-surface-variant" onclick="closePopover()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Telemetry Data Breakdown -->
+<div class="p-space-md space-y-space-sm">
+<div class="grid grid-cols-2 gap-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Estimated Depth</span>
+<span class="font-title-sm text-title-sm text-error font-bold">9.2 cm (Deep Fissure)</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">AI Confidence</span>
+<span class="font-title-sm text-title-sm text-on-surface">97.8% (Multi-pass)</span>
+</div>
+</div>
+<div class="space-y-space-xs text-on-surface font-body-sm text-body-sm">
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">First Logged:</span>
+<span class="font-title-sm text-title-sm">Oct 23, 2026 • 08:14 AM</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Citizen Inquiries:</span>
+<span class="font-title-sm text-title-sm">3 merged reports</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Current Status:</span>
+<span class="inline-flex items-center gap-1 font-title-sm text-title-sm text-secondary">
+<span class="material-symbols-outlined text-[14px]">event_repeat</span> Scheduled Patching
+              </span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Dispatched Crew:</span>
+<span class="font-title-sm text-title-sm">BBMP Asphalt Rapid Unit #4</span>
+</div>
+</div>
+<!-- Remediation Progress Step Mini Bar -->
+<div class="pt-space-xs">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase">
+<span>Remediation Phase</span>
+<span>Step 3 of 4</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden flex">
+<div class="w-3/4 bg-secondary-container h-full"></div>
+</div>
+</div>
+<div class="pt-space-xs flex items-center gap-space-sm">
+<a class="flex-1 py-2 px-space-md bg-primary-container hover:bg-inverse-surface text-on-primary rounded-lg font-title-sm text-title-sm text-center flex items-center justify-center gap-space-xs shadow-sm transition-colors" data-path="track-report" href="#">
+<span>View Report Status</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- ACCESSIBLE ALTERNATIVE LIST VIEW (Hidden or visible via toggle) -->
+<div class="hidden flex-col gap-space-md" id="listViewContainer">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Audited Road Reports Registry</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing active municipal items</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Critical
+              </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">#RW-2026-00342</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">80ft Main Road, Koramangala</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Severe asphalt cavity near 4th Block intersection. 9.2cm calculated depth.</p>
+</div>
+<div class="pt-space-sm bg-surface-container-low -mx-space-md -mb-space-md p-space-md rounded-b-xl flex items-center justify-between">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Logged</span>
+<span class="font-title-sm text-title-sm text-on-surface">Oct 23, 2026</span>
+</div>
+<a class="inline-flex items-center gap-1 font-title-sm text-title-sm text-on-surface hover:text-secondary transition-colors" data-path="track-report" href="#">
+<span>Audit History</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span> High Severity
+              </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">#RW-2026-00318</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">100ft Road, Indiranagar</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cluster of surface ruptures along eastbound lane near metro pillar 42.</p>
+</div>
+<div class="pt-space-sm bg-surface-container-low -mx-space-md -mb-space-md p-space-md rounded-b-xl flex items-center justify-between">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Status</span>
+<span class="font-title-sm text-title-sm text-on-surface">Under Review</span>
+</div>
+<a class="inline-flex items-center gap-1 font-title-sm text-title-sm text-on-surface hover:text-secondary transition-colors" data-path="track-report" href="#">
+<span>Audit History</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Fixed / Verified
+              </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">#RW-2026-00289</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">Sarjapur Main Road, Bellandur</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Bituminous cold mix patch completed by zone engineering crew. AI re-scan cleared.</p>
+</div>
+<div class="pt-space-sm bg-surface-container-low -mx-space-md -mb-space-md p-space-md rounded-b-xl flex items-center justify-between">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Remediated</span>
+<span class="font-title-sm text-title-sm text-on-tertiary-container">Oct 21, 2026</span>
+</div>
+<a class="inline-flex items-center gap-1 font-title-sm text-title-sm text-on-surface hover:text-secondary transition-colors" data-path="track-report" href="#">
+<span>Audit History</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Ward Operations Summary Strip -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined">route</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Ward Response Cadence</span>
+<div class="font-headline-sm text-headline-sm text-on-surface">36.4 Hours Avg</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">From first verification to field dispatch</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined">construction</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Current Scheduled Works</span>
+<div class="font-headline-sm text-headline-sm text-on-surface">42 Rapid Crews Active</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Priority given to critical transit corridors</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-on-tertiary-container shrink-0">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Public Transparency Log</span>
+<div class="font-headline-sm text-headline-sm text-on-surface">100% Verifiable</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Independent optical re-survey records</p>
+</div>
+</div>
+</div>
+<!-- Prototype Operational Disclaimer Note -->
+<div class="p-space-md bg-surface-container rounded-xl flex items-start gap-space-md">
+<span class="material-symbols-outlined text-secondary-container mt-0.5">info</span>
+<div class="space-y-0.5">
+<span class="font-title-sm text-title-sm text-on-surface">Ward Demonstration Environment</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Illustrative demo markers for city ward prototype. Live sensor feeds active once municipal GPS trucks sync telemetry batch pipelines. All citizen coordinates are privacy-blurred within an 8-meter radial cluster.
+        </p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function switchView(mode) {
+    const mapContainer = document.getElementById('mapViewContainer');
+    const listContainer = document.getElementById('listViewContainer');
+    const tabMap = document.getElementById('tabMap');
+    const tabList = document.getElementById('tabList');
+
+    if (mode === 'map') {
+      mapContainer.classList.remove('hidden');
+      listContainer.classList.add('hidden');
+      listContainer.classList.remove('flex');
+      
+      tabMap.className = 'px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-on-surface shadow-sm font-title-sm text-title-sm flex items-center gap-space-xs transition-all';
+      tabList.className = 'px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-title-sm text-title-sm flex items-center gap-space-xs transition-all';
+    } else {
+      mapContainer.classList.add('hidden');
+      listContainer.classList.remove('hidden');
+      listContainer.classList.add('flex');
+
+      tabList.className = 'px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-on-surface shadow-sm font-title-sm text-title-sm flex items-center gap-space-xs transition-all';
+      tabMap.className = 'px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-title-sm text-title-sm flex items-center gap-space-xs transition-all';
+    }
+  }
+
+  function triggerGeoFeedback() {
+    const toast = document.getElementById('geoToast');
+    toast.classList.remove('hidden');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 4500);
+  }
+
+  function selectMarker(id) {
+    const card = document.getElementById('popoverCard');
+    card.classList.remove('hidden');
+    
+    // Quick demo repositioning or data update
+    if (id === 1) {
+      card.style.left = '34%';
+      card.style.top = '42%';
+    } else if (id === 2) {
+      card.style.left = '58%';
+      card.style.top = '28%';
+    } else {
+      card.style.left = '50%';
+      card.style.top = '50%';
+    }
+  }
+
+  function closePopover() {
+    document.getElementById('popoverCard').classList.add('hidden');
+  }
+
+  function resetFilters() {
+    document.getElementById('searchInput').value = '';
+    document.getElementById('severityFilter').value = 'all';
+    document.getElementById('statusFilter').value = 'all';
+    filterPotholes();
+  }
+
+  function filterPotholes() {
+    // Demonstration toggle interaction
+    const severity = document.getElementById('severityFilter').value;
+    const marker1 = document.getElementById('marker-1');
+    const marker2 = document.getElementById('marker-2');
+    
+    if (severity === 'critical') {
+      if (marker1) marker1.style.display = 'block';
+      if (marker2) marker2.style.display = 'none';
+    } else if (severity === 'high') {
+      if (marker1) marker1.style.display = 'none';
+      if (marker2) marker2.style.display = 'block';
+    } else {
+      if (marker1) marker1.style.display = 'block';
+      if (marker2) marker2.style.display = 'block';
+    }
+  }
+
+  function mapZoom(delta) {
+    const map = document.getElementById('mapViewContainer');
+    // Subtle visual indicator for interaction prototype
+    map.classList.add('scale-[1.002]');
+    setTimeout(() => map.classList.remove('scale-[1.002]'), 150);
+  }
+
+  function resetMapCenter() {
+    const card = document.getElementById('popoverCard');
+    card.classList.remove('hidden');
+    card.style.left = '34%';
+    card.style.top = '42%';
+  }
+</script></main><footer class="w-full bg-surface-container-low mt-margin-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-7xl mx-auto px-margin py-margin-lg"><div class="grid grid-cols-1 md:grid-cols-4 gap-gutter"><div class="md:col-span-1"><div class="flex items-center gap-space-sm mb-space-sm"><img alt="RoadWise AI Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XLdD17Nx3wtOikKjjeJHupsQlb4X2Tnh0NlKFMWi05T0ozE-745sg18T4sfeHpNrpaOGdC9Toru8I6C9yOOikGV3kAjDenYW0-6Tz7nh00jHBzjT9eCE1yHvpXAOs0JZBcsFMYaKPOpHbd6EGM5fEktavYEs-FBn1PxD2SivnJeS_X0nXfGMYs6aAsgxd5FFBgI91S2wUAeIQPpYW3VIsU-rv71BcBQZxEOjQrGdAvspmTAuz_m3ESqP77"/><span class="font-headline-sm text-headline-sm text-on-surface">RoadWise.AI</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Intelligent civic infrastructure diagnostics, real-time spatial triangulation, and accountable municipal remediation for safer thoroughfares.</p></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Platform</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="report-a-pothole" href="#">Report a Hazard</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="track-report" href="#">Status Verification</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="public-road-map" href="#">Civic GIS Map</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Information</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">About</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy" href="#">Privacy &amp; Audits</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">Contact</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Municipal Governance</span><p class="font-body-sm text-body-sm text-on-surface-variant">Authorized personnel access only. Telemetry encryption validated.</p><a class="inline-flex items-center gap-space-xs font-title-sm text-title-sm text-on-surface hover:text-secondary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-title-sm">admin_panel_settings</span><span>Authority Portal</span></a></div></div><div class="mt-margin-lg pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm"><p>© 2025 RoadWise AI Civic Infrastructure Platform. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="inline-flex items-center gap-space-xs font-code-sm text-code-sm"><span class="w-2 h-2 rounded-full bg-secondary-container"></span>Civic Telemetry v4.2 Active</span></div></div></div></footer></body></html>

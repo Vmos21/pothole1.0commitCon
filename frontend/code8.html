@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>RoadWise AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#eff4ff", "on-primary-fixed-variant": "#3f465c", "secondary-fixed": "#ffddb8", "primary-fixed": "#dae2fd", "inverse-primary": "#bec6e0", "tertiary-fixed-dim": "#93ccff", "on-error-container": "#93000a", "on-surface-variant": "#45464d", "on-tertiary-fixed": "#001d31", "on-tertiary-fixed-variant": "#004b73", "inverse-surface": "#213145", "on-tertiary": "#ffffff", "primary-fixed-dim": "#bec6e0", "surface-tint": "#565e74", "inverse-on-surface": "#eaf1ff", "outline": "#76777d", "secondary": "#855300", "on-secondary-container": "#684000", "surface-bright": "#f8f9ff", "surface-container-high": "#dce9ff", "on-background": "#0b1c30", "tertiary-fixed": "#cce5ff", "on-error": "#ffffff", "on-primary-container": "#7c839b", "on-primary": "#ffffff", "error": "#ba1a1a", "on-surface": "#0b1c30", "surface-container-highest": "#d3e4fe", "on-secondary": "#ffffff", "background": "#f8f9ff", "surface-dim": "#cbdbf5", "surface-container-lowest": "#ffffff", "primary": "#000000", "secondary-container": "#fea619", "tertiary": "#000000", "error-container": "#ffdad6", "tertiary-container": "#001d31", "surface-variant": "#d3e4fe", "on-tertiary-container": "#188ace", "on-primary-fixed": "#131b2e", "outline-variant": "#c6c6cd", "primary-container": "#131b2e", "secondary-fixed-dim": "#ffb95f", "on-secondary-fixed-variant": "#653e00", "on-secondary-fixed": "#2a1700", "surface": "#f8f9ff", "surface-container": "#e5eeff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-sm": "1rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xl": "2rem", "margin": "2rem", "gutter": "1.5rem", "space-lg": "1.5rem", "margin-lg": "3rem", "margin-sm": "1rem", "space-xs": "0.25rem" }, "fontFamily": { "label-sm": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "title-sm": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "title-md": ["Inter"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Inter"], "code-sm": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Inter"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "code-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="RoadWise AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XLdD17Nx3wtOikKjjeJHupsQlb4X2Tnh0NlKFMWi05T0ozE-745sg18T4sfeHpNrpaOGdC9Toru8I6C9yOOikGV3kAjDenYW0-6Tz7nh00jHBzjT9eCE1yHvpXAOs0JZBcsFMYaKPOpHbd6EGM5fEktavYEs-FBn1PxD2SivnJeS_X0nXfGMYs6aAsgxd5FFBgI91S2wUAeIQPpYW3VIsU-rv71BcBQZxEOjQrGdAvspmTAuz_m3ESqP77"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">RoadWise<span class="text-secondary-container">.AI</span></span></a><span class="hidden lg:inline-flex items-center px-space-sm py-space-xs rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase">Civic Portal</span></div><nav class="hidden md:flex items-center gap-space-xs" data-active-classes="bg-surface-container text-on-surface font-title-sm text-title-sm rounded-lg"><a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#">Home</a><a aria-current="page" class="px-space-md py-space-sm transition-colors bg-surface-container text-on-surface font-title-sm text-title-sm rounded-lg" data-path="report-a-pothole" href="#">Report a Pothole</a><a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="track-report" href="#">Track Report</a><a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="public-road-map" href="#">Public Road Map</a><a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="how-it-works" href="#">How It Works</a></nav><div class="flex items-center gap-space-sm"><a class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-primary-container text-on-primary rounded-lg font-title-sm text-title-sm shadow-[0_1px_8px_rgba(0,0,0,0.04)] hover:bg-inverse-surface transition-colors" data-path="authority-login" href="#"><span class="material-symbols-outlined text-title-sm">lock</span><span>Authority Login</span></a></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-16rem)]"><div class="flex flex-col w-full">
+<!-- Status & Environmental Micro-Strip -->
+<section class="w-full bg-surface-container-low py-space-xs px-margin">
+<div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-space-sm text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-secondary-container animate-ping"></span>
+<span class="inline-flex items-center gap-1 font-mono text-on-surface">CIVIC TELEMETRY: ACTIVE REGIONAL RADAR</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span>Public Ingestion API v4.2</span>
+<span class="text-outline">/</span>
+<span class="text-secondary font-title-sm">Prototype Mode Active</span>
+</div>
+</div>
+</section>
+<!-- Main Workstation Layout Container -->
+<section class="w-full py-space-xl px-margin">
+<div class="max-w-6xl mx-auto">
+<!-- Civic Context Header with Asymmetric Accent -->
+<div class="relative mb-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase mb-space-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span>
+<span>Civic Dispatch System</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Report a Pothole</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">
+              Help us identify damaged roads by sharing a photo and location. Computer vision parses depth, severity, and asphalt distress in real-time.
+            </p>
+</div>
+<!-- Quick Prototype Trigger Pill for Evaluation -->
+<div class="bg-surface-container-high rounded-xl p-space-sm flex items-center gap-space-sm self-start md:self-auto shadow-sm">
+<span class="material-symbols-outlined text-secondary-container">swap_horizontal_circle</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface">View Simulation</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Toggle Success State modal</span>
+</div>
+<button class="px-space-md py-space-xs bg-primary-container text-on-primary rounded-lg font-title-sm text-title-sm hover:bg-inverse-surface transition-colors shadow-sm ml-space-sm" id="toggle-modal-btn" onclick="document.getElementById('success-modal').classList.remove('hidden')" type="button">
+              Preview Receipt
+            </button>
+</div>
+</div>
+<!-- 3-Step Interactive Process Visualizer -->
+<div class="mt-space-xl bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md relative">
+<!-- Step 1 Indicator -->
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container text-on-surface transition-all" id="step-nav-1">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-title-sm text-title-sm">
+                1
+              </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-secondary">Step 01</span>
+<span class="font-title-sm text-title-sm">Photo &amp; AI Scan</span>
+</div>
+<span class="material-symbols-outlined text-secondary-container ml-auto">check_circle</span>
+</div>
+<!-- Step 2 Indicator -->
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container text-on-surface transition-all" id="step-nav-2">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-title-sm text-title-sm">
+                2
+              </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-secondary">Step 02</span>
+<span class="font-title-sm text-title-sm">Spatial Verification</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant ml-auto text-title-sm">edit_location</span>
+</div>
+<!-- Step 3 Indicator -->
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container text-on-surface transition-all" id="step-nav-3">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-title-sm text-title-sm">
+                3
+              </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-secondary">Step 03</span>
+<span class="font-title-sm text-title-sm">Structural Context</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant ml-auto text-title-sm">assignment</span>
+</div>
+</div>
+<!-- Progress Bar Ribbon -->
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-space-md overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full w-2/3 transition-all duration-500"></div>
+</div>
+</div>
+</div>
+<!-- Main Form Workflow Grid -->
+<form class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg" id="pothole-report-form" onsubmit="event.preventDefault(); document.getElementById('success-modal').classList.remove('hidden');">
+<!-- Primary Ingestion Column (Steps 1 & 2) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- STEP 1: Photo Upload Section -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface font-title-sm text-title-sm flex items-center justify-center">1</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Capture or Upload Hazard</h2>
+</div>
+<span class="px-space-sm py-space-xs rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm uppercase">Required</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Provide a clear image showing both the pothole depth and immediate road boundary. Our municipal computer vision pipeline will automatically triangulate impact depth and material stress.
+            </p>
+<!-- Drop Zone Container -->
+<div class="relative group rounded-xl p-space-lg bg-surface-container-low transition-all cursor-pointer text-center" id="drop-zone">
+<input accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="image-upload-input" type="file"/>
+<div class="flex flex-col items-center justify-center gap-space-sm py-space-md">
+<div class="w-14 h-14 rounded-full bg-surface-container-highest flex items-center justify-center text-primary-container group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[32px]">add_a_photo</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-title-md text-title-md text-on-surface">Drag &amp; drop high-resolution photo</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Supports HEIC, JPG, PNG up to 25MB • Automated EXIF scrubbing</span>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-space-sm mt-space-sm">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-primary-container text-on-primary rounded-lg font-title-sm text-title-sm shadow-sm hover:bg-inverse-surface transition-colors pointer-events-none" type="button">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+<span>Browse Device Files</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-surface-container-lowest text-on-surface rounded-lg font-title-sm text-title-sm shadow-sm hover:bg-surface-container transition-colors pointer-events-none" type="button">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+<span>Use Mobile Camera</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Realistic Upload Preview & AI Scanner Frame -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary">memory</span>
+<span class="font-title-sm text-title-sm">Neural Telemetry Pre-Scan</span>
+</div>
+<button class="text-error font-title-sm text-title-sm hover:underline flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Replace Photo</span>
+</button>
+</div>
+<!-- Image with Overlaid Analytical HUD -->
+<div class="relative w-full h-56 rounded-lg overflow-hidden bg-primary-container">
+<img class="w-full h-full object-cover opacity-90" data-alt="Detailed close-up inspection photo of a severe jagged asphalt pothole on a paved urban city street. High contrast morning light highlighting asphalt cratering, loose gravel aggregates, and deep pavement fissure with measuring metric scale visible in realistic documentary civic engineering style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm6GHKWrAT6iloEmgoRyG107syV0ULRJLg8bsteihmj9w8F6bXzFOOlJR75oC4WZGtb_JSVVc5HqVUs118g2NWDxPQuhZLyHn8bzIFZnCXRSPnUq-YDyWofURKvPE-cJ9H1W-rsGrGuBZv_eWINthZ_NdWfGkGq4K7Ug1J256tLbn-kpk8ZqQ1BmcYv-IajMUIaphvp04j5-QgGnQQ6UyU12twSsVY8Yz7Cf5T6v5a3Sc8Ya4GUZNedQ"/>
+<!-- AI Computer Vision HUD Overlays -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent flex flex-col justify-between p-space-sm pointer-events-none">
+<div class="flex justify-between items-start">
+<span class="px-space-xs py-0.5 rounded bg-primary-container/90 text-on-primary font-mono text-[10px] tracking-wider uppercase">
+                      FRAME: #RAW_SURFACE_091
+                    </span>
+<span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-mono text-[10px] font-bold uppercase">
+                      CONFIDENCE: 96.4%
+                    </span>
+</div>
+<!-- Real-time CV Detection Bounding Box Marker -->
+<div class="absolute top-1/4 left-1/4 w-1/2 h-1/2 rounded-md bg-secondary-container/10 flex items-end p-space-xs">
+<span class="bg-primary-container text-secondary-container font-mono text-[10px] px-1 py-0.5 rounded">
+                      ZONE_CRA-884: DIVERGENT RIM
+                    </span>
+</div>
+<!-- Bottom Telemetry Chips -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-space-sm py-space-xs rounded-full bg-surface-container-lowest/90 text-on-surface font-label-sm text-label-sm backdrop-blur">
+                      Asphalt Cratering Detected
+                    </span>
+<span class="px-space-sm py-space-xs rounded-full bg-surface-container-lowest/90 text-on-surface font-label-sm text-label-sm backdrop-blur">
+                      Est. Depth: ~7.2 cm
+                    </span>
+<span class="px-space-sm py-space-xs rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">
+                      ● High Severity
+                    </span>
+</div>
+</div>
+</div>
+<!-- Upload Verification Progress Micro-Bar -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">cloud_done</span>
+                    IMG_ROAD_2026_BENGALURU.RAW (4.8 MB)
+                  </span>
+<span class="font-mono text-on-surface">100% VERIFIED</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full w-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- STEP 2: Spatial Triangulation / Map Location -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface font-title-sm text-title-sm flex items-center justify-center">2</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Confirm Location</h2>
+</div>
+<span class="px-space-sm py-space-xs rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm uppercase">Spatial Match</span>
+</div>
+<!-- Spatial Action Row -->
+<div class="flex flex-col sm:flex-row gap-space-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-10 pl-10 pr-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all" placeholder="Enter street, landmark, or arterial intersection..." type="text" value="142 MG Road, near Central Post Office"/>
+</div>
+<button class="inline-flex items-center justify-center gap-space-xs px-space-md h-10 bg-surface-container text-on-surface rounded-lg font-title-sm text-title-sm hover:bg-surface-container-high transition-colors shadow-sm whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">my_location</span>
+<span>Use Current Location</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs px-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span>Device location accessed with your explicit cryptographic browser consent.</span>
+</div>
+<!-- Interactive Map Viewport with Pin Pinpointing -->
+<div class="relative w-full h-72 rounded-xl overflow-hidden shadow-sm">
+<div class="w-full h-full bg-cover bg-center" data-location="Indiranagar 100ft Road, Bengaluru, India" style=""></div>
+<!-- Subtle Cartographic Gradient Scrim -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/40 via-transparent to-transparent pointer-events-none"></div>
+<!-- Safety-Amber Pin Floating at Center -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full flex flex-col items-center pointer-events-none drop-shadow-md">
+<div class="px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-wide flex items-center gap-1 shadow-md mb-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+<span>Target Hazard</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[20px]">fmd_bad</span>
+</div>
+<div class="w-2 h-2 bg-on-surface rotate-45 -mt-1"></div>
+</div>
+<!-- Map Pan Navigation Tip Overlay -->
+<div class="absolute bottom-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md rounded-lg px-space-sm py-space-xs text-on-surface shadow-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">pan_tool</span>
+<span class="font-body-sm text-body-sm">Drag pin or map to calibrate exact repair locus</span>
+</div>
+</div>
+<!-- Precision Geocode Display Box -->
+<div class="p-space-sm rounded-lg bg-surface-container-high flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm font-mono text-body-sm text-on-surface">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">explore</span>
+<span>Lat: 12.9716° N, Long: 77.5946° E</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm font-sans">
+<span class="material-symbols-outlined text-[16px]">location_city</span>
+<span>Indiranagar 100ft Road • Ward 84</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Context Column (Step 3 & Authority Dispatch) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- STEP 3: Structural Context & Civic Metadata -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface font-title-sm text-title-sm flex items-center justify-center">3</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Damage Details</h2>
+</div>
+<span class="px-space-sm py-space-xs rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase">Context</span>
+</div>
+<!-- Damage Classification Select -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-title-sm text-title-sm text-on-surface" for="damage-type">Road Damage Type</label>
+<div class="relative">
+<select class="w-full h-10 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container appearance-none cursor-pointer" id="damage-type">
+<option selected="">Pothole (Localized Surface Cratering)</option>
+<option>Edge Crack (Shoulder Deterioration)</option>
+<option>Trench Depression (Utility Backfill Subsidence)</option>
+<option>Manhole Subsidence (Collar Cavity Failure)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Qualitative Citizen Context Textarea -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-title-sm text-title-sm text-on-surface" for="hazard-description">Description &amp; Observations</label>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Optional Context</span>
+</div>
+<textarea class="w-full p-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container resize-none transition-all" id="hazard-description" placeholder="e.g. Water collects here after rain, causing two-wheelers to skid near the bus bay stop." rows="4">Water collects here heavily during showers. Two-wheelers brake erratically causing near misses during evening peak hours.</textarea>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Helps municipal crews select asphalt cold-mix vs hot-mix equipment, roller tonnage, and traffic diversion barricades.
+              </p>
+</div>
+<!-- Contact Input & Privacy Protection -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<label class="font-title-sm text-title-sm text-on-surface" for="citizen-contact">Citizen Verification Link (Phone or Email)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[20px]">alternate_email</span>
+<input class="w-full h-10 pl-10 pr-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-all" id="citizen-contact" placeholder="contact@domain.gov or +91 98450 XXXXX" type="text" value="civic.resident@outlook.org"/>
+</div>
+<!-- Explicit Privacy Callout -->
+<div class="bg-surface-container rounded-lg p-space-sm flex items-start gap-space-sm mt-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">lock</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+                  Contact details are kept strictly private and used only if municipal field inspectors need geolocation clarification. Never syndicated or sold.
+                </p>
+</div>
+</div>
+<!-- Validation Check List -->
+<div class="bg-surface-container-high rounded-lg p-space-sm flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Intake Quality Verification</span>
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>Photometric clarity verified (&gt;300 DPI)</span>
+</div>
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>GIS municipal jurisdiction matched (Ward 84)</span>
+</div>
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>Zero duplicate reports in immediate 30-meter radial envelope</span>
+</div>
+</div>
+<!-- Final Action Submission Block -->
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<button class="w-full py-space-md px-space-lg bg-primary-container text-on-primary rounded-lg font-title-md text-title-md hover:bg-inverse-surface shadow-md transition-all flex items-center justify-center gap-space-sm group" type="submit">
+<span>Submit Report to Municipal Queue</span>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">send</span>
+</button>
+<div class="text-center font-body-sm text-body-sm text-on-surface-variant">
+                Reports are processed in public dispatch within 4 business hours.
+              </div>
+</div>
+</div>
+<!-- Municipal Remediation SLA Transparency Card -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary">speed</span>
+<h3 class="font-title-md text-title-md">Municipal Repair Commitments</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Reports automatically generate decentralized maintenance logs. High severity ratings mandate field team dispatch under the Civic Thoroughfares Act.
+            </p>
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs text-center">
+<div class="bg-surface-container-lowest p-space-sm rounded-lg">
+<span class="block font-headline-sm text-headline-sm text-on-surface font-mono">24h</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Critical Response</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg">
+<span class="block font-headline-sm text-headline-sm text-on-surface font-mono">98.2%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">30-Day Closure Rate</span>
+</div>
+</div>
+</div>
+</div>
+</form>
+<!-- Mandatory Prototype Transparency Notice -->
+<div class="mt-space-xl p-space-md bg-surface-container-high rounded-xl text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong class="text-on-surface">Prototype Mode:</strong> File upload, computer vision pre-scan telemetry, and GPS geocoding are demonstrated in high-fidelity sandbox for frontend evaluation.
+        </p>
+</div>
+</div>
+</section>
+<!-- POST-SUBMISSION SUCCESS STATE MODAL OVERLAY -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-margin bg-primary-container/60 backdrop-blur-sm" id="success-modal">
+<div class="bg-surface-container-lowest max-w-lg w-full rounded-2xl p-space-xl shadow-2xl flex flex-col gap-space-md animate-in fade-in zoom-in duration-300">
+<!-- Affirmation Icon and Title -->
+<div class="flex flex-col items-center text-center gap-space-xs">
+<div class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center mb-space-xs shadow-md">
+<span class="material-symbols-outlined text-[36px]">check_circle</span>
+</div>
+<span class="px-space-sm py-space-xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm uppercase tracking-wider">Dispatched to Civic Engine</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Your report has been submitted!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Our civic triage team and road maintenance unit have received your incident package.
+        </p>
+</div>
+<!-- Incident Metadata Receipt Card -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm">
+<!-- Report ID with Instant Copy Action -->
+<div class="flex items-center justify-between pb-space-xs bg-surface-container-lowest p-space-sm rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Assigned Reference ID</span>
+<span class="font-mono font-bold text-title-md text-on-surface" id="report-id-text">RW-2026-00125</span>
+</div>
+<button class="px-space-sm py-1 bg-surface-container text-on-surface font-label-sm text-label-sm uppercase rounded hover:bg-surface-container-high transition-colors" onclick="navigator.clipboard.writeText('RW-2026-00125'); this.innerText='COPIED!';" type="button">
+            Copy ID
+          </button>
+</div>
+<!-- Location Confirmation -->
+<div class="flex items-start gap-space-sm py-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">pin_drop</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Reported Roadway Coordinates</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">142 MG Road, Indiranagar • Ward 84</span>
+<span class="font-mono text-body-sm text-on-surface-variant">Lat: 12.9716° N • Long: 77.5946° E</span>
+</div>
+</div>
+<!-- Status Pill -->
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-high p-space-sm rounded-lg">
+<span class="font-title-sm text-title-sm text-on-surface">Current Processing Status</span>
+<span class="px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm uppercase font-bold">
+            Received &amp; Queued for AI Verification
+          </span>
+</div>
+</div>
+<!-- Action Navigation Buttons -->
+<div class="flex flex-col sm:flex-row items-center gap-space-sm pt-space-xs">
+<a class="w-full sm:flex-1 py-space-md bg-primary-container text-on-primary rounded-lg font-title-sm text-title-sm hover:bg-inverse-surface transition-colors text-center shadow-sm flex items-center justify-center gap-space-xs" data-path="track-report" href="#">
+<span class="material-symbols-outlined text-[18px]">travel_explore</span>
+<span>Track My Report</span>
+</a>
+<button class="w-full sm:flex-1 py-space-md bg-surface-container text-on-surface rounded-lg font-title-sm text-title-sm hover:bg-surface-container-high transition-colors text-center shadow-sm" onclick="document.getElementById('success-modal').classList.add('hidden')" type="button">
+          Close &amp; File Another
+        </button>
+</div>
+<div class="text-center font-body-sm text-body-sm text-on-surface-variant">
+        A copy of this audit transaction has been stored in your browser session.
+      </div>
+</div>
+</div>
+</div>
+<!-- Vanilla Micro-Interactions Script for Prototype Polish -->
+<script>
+  (function() {
+    const dropZone = document.getElementById('drop-zone');
+    const imageInput = document.getElementById('image-upload-input');
+
+    if (dropZone && imageInput) {
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('bg-surface-container');
+      });
+
+      dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('bg-surface-container');
+      });
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('bg-surface-container');
+      });
+    }
+  })();
+</script></main><footer class="w-full bg-surface-container-low mt-margin-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-7xl mx-auto px-margin py-margin-lg"><div class="grid grid-cols-1 md:grid-cols-4 gap-gutter"><div class="md:col-span-1"><div class="flex items-center gap-space-sm mb-space-sm"><img alt="RoadWise AI Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XLdD17Nx3wtOikKjjeJHupsQlb4X2Tnh0NlKFMWi05T0ozE-745sg18T4sfeHpNrpaOGdC9Toru8I6C9yOOikGV3kAjDenYW0-6Tz7nh00jHBzjT9eCE1yHvpXAOs0JZBcsFMYaKPOpHbd6EGM5fEktavYEs-FBn1PxD2SivnJeS_X0nXfGMYs6aAsgxd5FFBgI91S2wUAeIQPpYW3VIsU-rv71BcBQZxEOjQrGdAvspmTAuz_m3ESqP77"/><span class="font-headline-sm text-headline-sm text-on-surface">RoadWise.AI</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Intelligent civic infrastructure diagnostics, real-time spatial triangulation, and accountable municipal remediation for safer thoroughfares.</p></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Platform</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="report-a-pothole" href="#">Report a Hazard</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="track-report" href="#">Status Verification</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="public-road-map" href="#">Civic GIS Map</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Information</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">About</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy" href="#">Privacy &amp; Audits</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">Contact</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Municipal Governance</span><p class="font-body-sm text-body-sm text-on-surface-variant">Authorized personnel access only. Telemetry encryption validated.</p><a class="inline-flex items-center gap-space-xs font-title-sm text-title-sm text-on-surface hover:text-secondary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-title-sm">admin_panel_settings</span><span>Authority Portal</span></a></div></div><div class="mt-margin-lg pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm"><p>© 2025 RoadWise AI Civic Infrastructure Platform. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="inline-flex items-center gap-space-xs font-code-sm text-code-sm"><span class="w-2 h-2 rounded-full bg-secondary-container"></span>Civic Telemetry v4.2 Active</span></div></div></div></footer></body></html>

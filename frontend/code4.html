@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>RoadWise AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#eff4ff", "on-primary-fixed-variant": "#3f465c", "secondary-fixed": "#ffddb8", "primary-fixed": "#dae2fd", "inverse-primary": "#bec6e0", "tertiary-fixed-dim": "#93ccff", "on-error-container": "#93000a", "on-surface-variant": "#45464d", "on-tertiary-fixed": "#001d31", "on-tertiary-fixed-variant": "#004b73", "inverse-surface": "#213145", "on-tertiary": "#ffffff", "primary-fixed-dim": "#bec6e0", "surface-tint": "#565e74", "inverse-on-surface": "#eaf1ff", "outline": "#76777d", "secondary": "#855300", "on-secondary-container": "#684000", "surface-bright": "#f8f9ff", "surface-container-high": "#dce9ff", "on-background": "#0b1c30", "tertiary-fixed": "#cce5ff", "on-error": "#ffffff", "on-primary-container": "#7c839b", "on-primary": "#ffffff", "error": "#ba1a1a", "on-surface": "#0b1c30", "surface-container-highest": "#d3e4fe", "on-secondary": "#ffffff", "background": "#f8f9ff", "surface-dim": "#cbdbf5", "surface-container-lowest": "#ffffff", "primary": "#000000", "secondary-container": "#fea619", "tertiary": "#000000", "error-container": "#ffdad6", "tertiary-container": "#001d31", "surface-variant": "#d3e4fe", "on-tertiary-container": "#188ace", "on-primary-fixed": "#131b2e", "outline-variant": "#c6c6cd", "primary-container": "#131b2e", "secondary-fixed-dim": "#ffb95f", "on-secondary-fixed-variant": "#653e00", "on-secondary-fixed": "#2a1700", "surface": "#f8f9ff", "surface-container": "#e5eeff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-sm": "1rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xl": "2rem", "margin": "2rem", "gutter": "1.5rem", "space-lg": "1.5rem", "margin-lg": "3rem", "margin-sm": "1rem", "space-xs": "0.25rem" }, "fontFamily": { "label-sm": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "title-sm": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "title-md": ["Inter"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Inter"], "code-sm": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Inter"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "code-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="RoadWise AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XLdD17Nx3wtOikKjjeJHupsQlb4X2Tnh0NlKFMWi05T0ozE-745sg18T4sfeHpNrpaOGdC9Toru8I6C9yOOikGV3kAjDenYW0-6Tz7nh00jHBzjT9eCE1yHvpXAOs0JZBcsFMYaKPOpHbd6EGM5fEktavYEs-FBn1PxD2SivnJeS_X0nXfGMYs6aAsgxd5FFBgI91S2wUAeIQPpYW3VIsU-rv71BcBQZxEOjQrGdAvspmTAuz_m3ESqP77"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">RoadWise<span class="text-secondary-container">.AI</span></span></a><span class="hidden lg:inline-flex items-center px-space-sm py-space-xs rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase">Civic Portal</span></div><nav class="hidden md:flex items-center gap-space-xs" data-active-classes="bg-surface-container text-on-surface font-title-sm text-title-sm rounded-lg"><a aria-current="page" class="px-space-md py-space-sm transition-colors bg-surface-container text-on-surface font-title-sm text-title-sm rounded-lg" data-path="home" href="#">Home</a><a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="report-a-pothole" href="#">Report a Pothole</a><a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="track-report" href="#">Track Report</a><a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="public-road-map" href="#">Public Road Map</a><a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="how-it-works" href="#">How It Works</a></nav><div class="flex items-center gap-space-sm"><a class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-primary-container text-on-primary rounded-lg font-title-sm text-title-sm shadow-[0_1px_8px_rgba(0,0,0,0.04)] hover:bg-inverse-surface transition-colors" data-path="authority-login" href="#"><span class="material-symbols-outlined text-title-sm">lock</span><span>Authority Login</span></a></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-16rem)]"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-surface-container-low py-space-xl lg:py-margin-lg">
+<!-- Atmospheric Ambient Grid Accent -->
+<div class="absolute inset-0 pointer-events-none opacity-40 bg-[radial-gradient(#131b2e_1px,transparent_1px)] [background-size:24px_24px]"></div>
+<div class="max-w-7xl mx-auto px-margin relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Hero Text Narrative -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-space-xs self-start px-space-sm py-space-xs rounded-full bg-surface-container-highest text-on-surface">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase">Live Civic Infrastructure Network</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+            See a Pothole? <br class="hidden sm:inline"/>
+<span class="text-secondary-container">Help Make Your Roads Safer.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+            Report damaged roads in a few simple steps. Track your report in real time and assist municipal engineers in prioritizing dangerous street repairs based on commuter traffic and safety impact.
+          </p>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-md bg-secondary-container text-on-secondary-container font-title-md text-title-md rounded-lg shadow-md hover:bg-secondary-fixed-dim transition-all" data-path="report-a-pothole" href="#">
+<span class="material-symbols-outlined text-title-md">photo_camera</span>
+<span>Report a Pothole</span>
+</a>
+<a class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-md bg-surface-container-lowest text-on-surface font-title-md text-title-md rounded-lg shadow-sm hover:bg-surface-container transition-all" data-path="track-report" href="#">
+<span class="material-symbols-outlined text-title-md">search</span>
+<span>Track My Report</span>
+</a>
+</div>
+<!-- Real-Time Metric Ticker Under CTA -->
+<div class="flex items-center gap-space-lg pt-space-md mt-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary-container">verified</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Civic Resolution SLA: <strong>72 Hours</strong></span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container">near_me</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Auto-Assigned to Local Ward Crews</span>
+</div>
+</div>
+</div>
+<!-- Hero Graphic & Interactive Map Representation -->
+<div class="lg:col-span-6 relative">
+<!-- Main Map Simulation Canvas Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden relative">
+<!-- Simulated Map Canvas Header -->
+<div class="px-space-md py-space-sm bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-title-sm">map</span>
+<span class="font-title-sm text-title-sm text-on-surface">Metro Sector GIS Overview</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-error"></span> Critical
+                </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant ml-2">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span> High
+                </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant ml-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Under Review
+                </span>
+</div>
+</div>
+<!-- Map View Container using static pipeline attributes -->
+<div class="relative w-full h-[360px] bg-surface-container-high overflow-hidden" data-location="San Francisco, Downtown" style="">
+<!-- Grid Overlay for GIS telemetry feel -->
+<svg class="absolute inset-0 w-full h-full opacity-30 text-surface-tint pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="civic-grid" patternunits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.75"></path>
+</pattern>
+</defs>
+<rect fill="url(#civic-grid)" height="100%" width="100%"></rect>
+</svg>
+<!-- Stylized Simulated Vector Roads -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<!-- Major Arterial -->
+<path d="M-20,180 Q160,170 280,240 T540,160" fill="none" stroke="#cbdbf5" stroke-linecap="round" stroke-width="14"></path>
+<path d="M-20,180 Q160,170 280,240 T540,160" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="8"></path>
+<!-- Secondary Boulevard -->
+<path d="M120,-10 L190,380" fill="none" stroke="#cbdbf5" stroke-width="10"></path>
+<path d="M120,-10 L190,380" fill="none" stroke="#ffffff" stroke-width="6"></path>
+<!-- Cross Route -->
+<path d="M340,-20 L300,380" fill="none" stroke="#cbdbf5" stroke-width="8"></path>
+<path d="M340,-20 L300,380" fill="none" stroke="#ffffff" stroke-width="4"></path>
+</svg>
+<!-- GIS Live Markers -->
+<!-- Critical Marker 1 -->
+<div class="absolute top-28 left-36 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer">
+<div class="relative flex items-center justify-center">
+<span class="absolute w-8 h-8 rounded-full bg-error opacity-40 animate-ping"></span>
+<div class="w-7 h-7 rounded-full bg-error text-on-error flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-title-sm">warning</span>
+</div>
+</div>
+<div class="mt-1 px-space-xs py-0.5 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm whitespace-nowrap">
+                  Critical • 22cm Depth
+                </div>
+</div>
+<!-- High Risk Marker 2 -->
+<div class="absolute top-48 left-72 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center cursor-pointer">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[13px]">report</span>
+</div>
+<div class="mt-1 px-space-xs py-0.5 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm whitespace-nowrap">
+                  High • Oak Ave Corridor
+                </div>
+</div>
+<!-- Under Review Marker 3 -->
+<div class="absolute bottom-20 left-48 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center cursor-pointer">
+<div class="w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow">
+<span class="material-symbols-outlined text-[11px]">search</span>
+</div>
+<div class="mt-1 px-space-xs py-0.5 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm whitespace-nowrap">
+                  AI Review
+                </div>
+</div>
+<!-- Active Completion Callout Banner Overlay -->
+<div class="absolute bottom-space-sm left-space-sm right-space-sm bg-surface-container-lowest/95 backdrop-blur-md rounded-lg p-space-sm shadow-lg flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-title-md">task_alt</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-container block">Recent Fix Verified</span>
+<p class="font-title-sm text-title-sm text-on-surface font-semibold truncate">4th Ave &amp; Oak St — Fixed 2h ago</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dispatched by Ward Maintenance Unit #3</span>
+</div>
+</div>
+<span class="shrink-0 px-space-sm py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Closed</span>
+</div>
+</div>
+<!-- Floating Report Quick Status Lookup Dock inside card -->
+<div class="p-space-md bg-surface-container-lowest">
+<label class="font-title-sm text-title-sm text-on-surface block mb-space-xs" for="hero-search">Quick Report Status Verification</label>
+<div class="flex items-center gap-space-xs">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-title-sm">tag</span>
+<input class="w-full h-10 pl-9 pr-space-sm rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary-container" id="hero-search" placeholder="Enter Report ID (e.g., RW-84920)" type="text"/>
+</div>
+<button class="h-10 px-space-md bg-primary-container text-on-primary font-title-sm text-title-sm rounded-lg hover:bg-inverse-surface transition-colors flex items-center gap-space-xs shrink-0">
+<span>Track</span>
+<span class="material-symbols-outlined text-title-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- QUICK ACTIONS SECTION -->
+<section class="max-w-7xl mx-auto px-margin py-space-xl w-full">
+<div class="flex flex-col gap-space-xs mb-space-lg text-center md:text-left">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary-container font-semibold">Civic Utility Portals</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Immediate Actions for Safer Commutes</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Action 1: Report Road Damage -->
+<a class="group flex flex-col justify-between p-space-lg bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" data-path="report-a-pothole" href="#">
+<div>
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-space-md group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-headline-sm">add_a_photo</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Report Road Damage</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Snap an on-site photo, confirm your smartphone GPS location, and trigger automated volumetric damage classification for repair prioritization.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-md flex items-center gap-space-xs font-title-sm text-title-sm text-secondary-container group-hover:gap-space-sm transition-all">
+<span>Start Report</span>
+<span class="material-symbols-outlined text-title-sm">arrow_forward</span>
+</div>
+</a>
+<!-- Action 2: Track a Complaint -->
+<a class="group flex flex-col justify-between p-space-lg bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" data-path="track-report" href="#">
+<div>
+<div class="w-12 h-12 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center mb-space-md group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-headline-sm">manage_search</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Track a Complaint</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Monitor dispatch progress, review AI severity verification, and inspect official road crew photo proof once the asphalt patch is complete.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-md flex items-center gap-space-xs font-title-sm text-title-sm text-on-surface group-hover:gap-space-sm transition-all">
+<span>Check Status</span>
+<span class="material-symbols-outlined text-title-sm">arrow_forward</span>
+</div>
+</a>
+<!-- Action 3: Explore Potholes Near You -->
+<a class="group flex flex-col justify-between p-space-lg bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all" data-path="public-road-map" href="#">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest text-on-surface flex items-center justify-center mb-space-md group-hover:bg-surface-dim transition-colors">
+<span class="material-symbols-outlined text-headline-sm">travel_explore</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Explore Potholes Near You</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Navigate through public municipal heatmaps, inspect corridor health indexes, and view planned asphalt resurfacing projects for your neighborhood.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-md flex items-center gap-space-xs font-title-sm text-title-sm text-on-surface group-hover:gap-space-sm transition-all">
+<span>Open Public Map</span>
+<span class="material-symbols-outlined text-title-sm">arrow_forward</span>
+</div>
+</a>
+</div>
+</section>
+<!-- HOW IT WORKS SECTION -->
+<section class="w-full bg-surface-container py-space-xl lg:py-margin-lg">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary-container font-semibold">Civic Workflow Architecture</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-xs">How RoadWise AI Restores Thoroughfares</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+          Empowering citizens and municipal departments through four structured, transparent steps from initial sighting to verified asphalt asphalt patch.
+        </p>
+</div>
+<!-- 4 Connected Steps Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter relative">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary-container/40">01</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-title-md">photo_camera_back</span>
+</div>
+</div>
+<div class="h-32 mb-space-md rounded-lg overflow-hidden bg-surface-container-low flex items-center justify-center relative">
+<img class="w-full h-full object-cover" data-alt="A smartphone held by a municipal citizen taking a high-angle photo of an asphalt pothole on a city street in bright natural morning daylight, sharp edge focus on asphalt texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3_iEMFRIg7iqTkQOPbg7sEfMngrLjZVn-xg2QyGTQZT2gx0-0hBHgLxhjybqvp_8YckL3DUy-QMLWAXWlwD0MEexLhTRCZSis4eASQYpcbT6OAJawShiOd0IG7zUbboYE5qO0X_2K4epNZ8qlFiPu7xdzzY2_8Zay6tnDU9je6yEM_-A9EJYcBe4my0El51S7lJC55O9hvFlA4QOE50M3mJs3U2X-bvWhuaBnyU8nGXEKwE5gqHy1NA"/>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface mb-space-xs">Take a Photo</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Capture a clear view of the damage from your phone, vehicle dashcam, or walking commute.
+            </p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary-container/40">02</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-title-md">pin_drop</span>
+</div>
+</div>
+<div class="h-32 mb-space-md rounded-lg overflow-hidden bg-surface-container-low flex items-center justify-center relative">
+<img class="w-full h-full object-cover" data-alt="Detailed visual representation of a high precision digital map showing latitude and longitude pins at an urban street junction with a glowing blue location dot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkCusD52etJ7XLDVIZs2VofS7-KAa4c1892ZdDClDR-8RWkAaDJK5MoBOtiMijnManJDMHbUQqoOA8K8nPnA4EpE80g6SaUapU-5pW-Pc24RnUJSWD6EwDFJvAekDWwYfRAfRj-B7CJS-USSlG4iARz77a6zw_NNPg7N3K0mDFORTb1czEeRF0CZvtk-6YIoG3boxUffqmD0xNh82AVMmo3G0F3kfzkQ4uzw79GT9qa0nXRv_GEK-2PA"/>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface mb-space-xs">Share the Location</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Auto-triangulate via mobile GPS coordinates or manually adjust the marker pin directly on the municipal cross-street.
+            </p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary-container/40">03</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-title-md">psychology</span>
+</div>
+</div>
+<div class="h-32 mb-space-md rounded-lg overflow-hidden bg-surface-container-low flex items-center justify-center relative">
+<img class="w-full h-full object-cover" data-alt="Computer vision neural network scan displaying green digital bounding boxes and volumetric depth analysis overlays over an urban cracked road surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeiR_Oa-DZ-sFvft15mKLC2LnzieV2OjoZE7pM2_z4_9L8U3EvvVfG9IvlRjqjl3fDXdH2PcBYe55MhoqMpFPn1e0MQNBwPIBwAtbtjfzh5rAGMwEBRwmGy9f44XJ4ir28uj30-0T_URykUf83inHmMTBEs13KS2x6LyecQfJcN2l9DdbqZ0Cidr0rXg_dgR1hm5e45PxCPZ0rxlRHQpdVtVGG10CIjcPGzJU83X7Op-HAM98jKZhWJw"/>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface mb-space-xs">Submit a Report</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Instant AI neural analysis quantifies depth, edge fracture, and road risk score within 1.8 seconds.
+            </p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary-container/40">04</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-title-md">published_with_changes</span>
+</div>
+</div>
+<div class="h-32 mb-space-md rounded-lg overflow-hidden bg-surface-container-low flex items-center justify-center relative">
+<img class="w-full h-full object-cover" data-alt="Civil municipal highway repair crew laying smooth hot asphalt with a mechanical roller on a sunny metropolitan morning with safety cones in perimeter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKJQWDqrElsvzZouRbNYF_edP7Zi36sneHVFKGEGsdaSSnnQUA049SovDTRZAyH26bK7xKqzHL_5HOdnUg2x6K8pLkixXtrBBIf0DFhftZyWa22yDbdBYSEIfmLM32-iCtrtRxZ63y6KYv0pDsxQZIvRbDeVjLRvh5guYaCrZ-ScL5MLCyGtSxJfCyndg2MMdVf0g6dzLgyr2lXsOqtnbctQNIUDYkLo-Td2Nx3xrXnKYwNbwi6JNnCA"/>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface mb-space-xs">Track Repair Progress</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Receive transparent status updates via email or portal as crews schedule, inspect, and complete the patch.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- WHY IT MATTERS & PRIORITIZATION SECTION -->
+<section class="max-w-7xl mx-auto px-margin py-space-xl lg:py-margin-lg w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Explanatory Narrative Column -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary-container font-semibold">Civic Explainability</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">
+          Why Municipalities Don't Fix "First-Come, First-Served"
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Pothole repairs require heavy machinery, asphalt distribution logistics, and traffic control permits. To prevent life-threatening accidents and maximize public tax dollars, the RoadWise AI Engine dynamically weights four critical criteria for every submitted ticket.
+        </p>
+<div class="p-space-md rounded-lg bg-surface-container flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-on-surface text-title-md shrink-0">balance</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong>Equitable Governance:</strong> Algorithmic triage removes political bias, routing municipal resources directly where safety threats and transit congestion are most urgent.
+          </p>
+</div>
+</div>
+<!-- Prioritization 4 Factors Bento Grid -->
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Factor 1: Severity & Depth -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-error-container text-on-error-container flex items-center justify-center mb-space-xs">
+<span class="material-symbols-outlined text-title-md">straighten</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">Pothole Severity &amp; Depth</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            AI calculates crater diameter and millimeter depth to identify immediate hazards that cause tire punctures, wheel rim shears, or loss of two-wheeler vehicle control.
+          </p>
+</div>
+<!-- Factor 2: Traffic & Commuter Density -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-space-xs">
+<span class="material-symbols-outlined text-title-md">directions_bus</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">Commuter &amp; Transit Density</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Cross-referenced with live municipal telemetry. Dedicated bus corridors, hospital access lanes, and school crossing zones take top triage priority.
+          </p>
+</div>
+<!-- Factor 3: Road Hierarchy Classification -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center mb-space-xs">
+<span class="material-symbols-outlined text-title-md">alt_route</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">Road Classification Index</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Major arterials and expressways carrying high-speed vehicles are addressed ahead of quiet cul-de-sacs to eliminate chain-reaction freeway accidents.
+          </p>
+</div>
+<!-- Factor 4: Historical Subsurface Density -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center mb-space-xs">
+<span class="material-symbols-outlined text-title-md">layers</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">Subsurface Recurrence</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Recurring craters highlight underlying stormwater pipe leaks or foundation saturation, signaling engineering crews to perform complete sub-base overhauls.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- PUBLIC IMPACT & TRANSPARENCY METRICS SECTION -->
+<section class="w-full bg-primary-container text-on-primary py-space-xl lg:py-margin-lg">
+<div class="max-w-7xl mx-auto px-margin">
+<!-- Header with Disclaimer Badge -->
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md mb-space-xl">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary-container font-semibold">Civic Accountability Dashboard</span>
+<h2 class="font-headline-lg text-headline-lg text-on-primary mt-space-xs">City-Wide Repair Transparency</h2>
+</div>
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-lowest/10 backdrop-blur-md text-on-primary">
+<span class="material-symbols-outlined text-secondary-container text-title-sm">info</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase">DEMO SIMULATION DATA — PENDING LIVE SENSOR INTEGRATION</span>
+</div>
+</div>
+<!-- 4 High Impact Metric Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Metric 1 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest/5 backdrop-blur-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm text-on-primary-container">
+<span class="font-title-sm text-title-sm">Defects Reported</span>
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div class="font-headline-xl text-headline-xl font-bold text-on-primary mb-space-xs">1,482</div>
+<p class="font-body-sm text-body-sm text-on-primary-container">Verified civic submissions logged across 12 municipal wards.</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-secondary-container">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+14% citizen engagement this month</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest/5 backdrop-blur-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm text-on-primary-container">
+<span class="font-title-sm text-title-sm">AI Accuracy Score</span>
+<span class="material-symbols-outlined">auto_fix_high</span>
+</div>
+<div class="font-headline-xl text-headline-xl font-bold text-on-primary mb-space-xs">94.2%</div>
+<p class="font-body-sm text-body-sm text-on-primary-container">Validated computer vision identification on true asphalt damage.</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-secondary-container">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Trained on 85,000+ civic road images</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest/5 backdrop-blur-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm text-on-primary-container">
+<span class="font-title-sm text-title-sm">Critical Turnaround</span>
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div class="font-headline-xl text-headline-xl font-bold text-on-primary mb-space-xs">3.2 Days</div>
+<p class="font-body-sm text-body-sm text-on-primary-container">Average dispatch-to-patch time on high-hazard emergency roads.</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-secondary-container">
+<span class="material-symbols-outlined text-[14px]">speed</span>
+<span>Down from 11.4 days historical avg</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest/5 backdrop-blur-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm text-on-primary-container">
+<span class="font-title-sm text-title-sm">Optimized Savings</span>
+<span class="material-symbols-outlined">savings</span>
+</div>
+<div class="font-headline-xl text-headline-xl font-bold text-on-primary mb-space-xs">₹18.4L</div>
+<p class="font-body-sm text-body-sm text-on-primary-container">Municipal budget saved via consolidated asphalt batch dispatching.</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-secondary-container">
+<span class="material-symbols-outlined text-[14px]">eco</span>
+<span>-28% asphalt waste reduction</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CITIZEN CALL TO ACTION BANNER -->
+<section class="max-w-7xl mx-auto px-margin py-space-xl lg:py-margin-lg w-full">
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-lg p-space-xl lg:p-margin flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="max-w-xl">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary-container font-semibold">Take Part In Your Neighborhood</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-space-xs">Notice a Hazard on Your Commute Today?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+          It takes less than 60 seconds to upload an image. Your report triggers instant AI safety triangulation and notifies your ward engineering office.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-md shrink-0 w-full sm:w-auto">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-md bg-secondary-container text-on-secondary-container font-title-md text-title-md rounded-lg shadow-md hover:bg-secondary-fixed-dim transition-all" data-path="report-a-pothole" href="#">
+<span class="material-symbols-outlined text-title-md">photo_camera</span>
+<span>Submit Road Damage</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-md bg-surface-container text-on-surface font-title-md text-title-md rounded-lg hover:bg-surface-container-high transition-all" data-path="public-road-map" href="#">
+<span class="material-symbols-outlined text-title-md">explore</span>
+<span>Browse Ward Map</span>
+</a>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-low mt-margin-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-7xl mx-auto px-margin py-margin-lg"><div class="grid grid-cols-1 md:grid-cols-4 gap-gutter"><div class="md:col-span-1"><div class="flex items-center gap-space-sm mb-space-sm"><img alt="RoadWise AI Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XLdD17Nx3wtOikKjjeJHupsQlb4X2Tnh0NlKFMWi05T0ozE-745sg18T4sfeHpNrpaOGdC9Toru8I6C9yOOikGV3kAjDenYW0-6Tz7nh00jHBzjT9eCE1yHvpXAOs0JZBcsFMYaKPOpHbd6EGM5fEktavYEs-FBn1PxD2SivnJeS_X0nXfGMYs6aAsgxd5FFBgI91S2wUAeIQPpYW3VIsU-rv71BcBQZxEOjQrGdAvspmTAuz_m3ESqP77"/><span class="font-headline-sm text-headline-sm text-on-surface">RoadWise.AI</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Intelligent civic infrastructure diagnostics, real-time spatial triangulation, and accountable municipal remediation for safer thoroughfares.</p></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Platform</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="report-a-pothole" href="#">Report a Hazard</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="track-report" href="#">Status Verification</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="public-road-map" href="#">Civic GIS Map</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Information</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">About</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy" href="#">Privacy &amp; Audits</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">Contact</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Municipal Governance</span><p class="font-body-sm text-body-sm text-on-surface-variant">Authorized personnel access only. Telemetry encryption validated.</p><a class="inline-flex items-center gap-space-xs font-title-sm text-title-sm text-on-surface hover:text-secondary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-title-sm">admin_panel_settings</span><span>Authority Portal</span></a></div></div><div class="mt-margin-lg pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm"><p>© 2025 RoadWise AI Civic Infrastructure Platform. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="inline-flex items-center gap-space-xs font-code-sm text-code-sm"><span class="w-2 h-2 rounded-full bg-secondary-container"></span>Civic Telemetry v4.2 Active</span></div></div></div></footer></body></html>

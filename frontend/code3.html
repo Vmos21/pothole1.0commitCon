@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>RoadWise AI Authority Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#eff4ff", "on-primary-fixed-variant": "#3f465c", "secondary-fixed": "#ffddb8", "primary-fixed": "#dae2fd", "inverse-primary": "#bec6e0", "tertiary-fixed-dim": "#93ccff", "on-error-container": "#93000a", "on-surface-variant": "#45464d", "on-tertiary-fixed": "#001d31", "on-tertiary-fixed-variant": "#004b73", "inverse-surface": "#213145", "on-tertiary": "#ffffff", "primary-fixed-dim": "#bec6e0", "surface-tint": "#565e74", "inverse-on-surface": "#eaf1ff", "outline": "#76777d", "secondary": "#855300", "on-secondary-container": "#684000", "surface-bright": "#f8f9ff", "surface-container-high": "#dce9ff", "on-background": "#0b1c30", "tertiary-fixed": "#cce5ff", "on-error": "#ffffff", "on-primary-container": "#7c839b", "on-primary": "#ffffff", "error": "#ba1a1a", "on-surface": "#0b1c30", "surface-container-highest": "#d3e4fe", "on-secondary": "#ffffff", "background": "#f8f9ff", "surface-dim": "#cbdbf5", "surface-container-lowest": "#ffffff", "primary": "#000000", "secondary-container": "#fea619", "tertiary": "#000000", "error-container": "#ffdad6", "tertiary-container": "#001d31", "surface-variant": "#d3e4fe", "on-tertiary-container": "#188ace", "on-primary-fixed": "#131b2e", "outline-variant": "#c6c6cd", "primary-container": "#131b2e", "secondary-fixed-dim": "#ffb95f", "on-secondary-fixed-variant": "#653e00", "on-secondary-fixed": "#2a1700", "surface": "#f8f9ff", "surface-container": "#e5eeff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-sm": "1rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xl": "2rem", "margin": "2rem", "gutter": "1.5rem", "space-lg": "1.5rem", "margin-lg": "3rem", "margin-sm": "1rem", "space-xs": "0.25rem" }, "fontFamily": { "label-sm": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "title-sm": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "title-md": ["Inter"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Inter"], "code-sm": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Inter"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "code-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-primary-container z-50 flex flex-col justify-between py-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="px-gutter mb-space-xl flex items-center gap-space-sm"><img alt="RoadWise AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XLdD17Nx3wtOikKjjeJHupsQlb4X2Tnh0NlKFMWi05T0ozE-745sg18T4sfeHpNrpaOGdC9Toru8I6C9yOOikGV3kAjDenYW0-6Tz7nh00jHBzjT9eCE1yHvpXAOs0JZBcsFMYaKPOpHbd6EGM5fEktavYEs-FBn1PxD2SivnJeS_X0nXfGMYs6aAsgxd5FFBgI91S2wUAeIQPpYW3VIsU-rv71BcBQZxEOjQrGdAvspmTAuz_m3ESqP77"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-primary tracking-tight leading-none">RoadWise<span class="text-secondary-container">.AI</span></span><span class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-wider mt-1">Authority Ops</span></div></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-inverse-surface text-on-primary font-title-sm text-title-sm rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-primary-container font-title-sm text-title-sm hover:bg-inverse-surface hover:text-on-primary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-title-md">dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-primary-container font-title-sm text-title-sm hover:bg-inverse-surface hover:text-on-primary transition-colors" data-path="pothole-reports" href="#"><span class="material-symbols-outlined text-title-md">warning</span><span>Pothole Reports</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-primary-container font-title-sm text-title-sm hover:bg-inverse-surface hover:text-on-primary transition-colors" data-path="public-road-map" href="#"><span class="material-symbols-outlined text-title-md">map</span><span>Public Road Map</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-primary-container font-title-sm text-title-sm hover:bg-inverse-surface hover:text-on-primary transition-colors" data-path="priority-planner" href="#"><span class="material-symbols-outlined text-title-md">alt_route</span><span>Priority Planner</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-primary-container font-title-sm text-title-sm hover:bg-inverse-surface hover:text-on-primary transition-colors" data-path="repair-plan" href="#"><span class="material-symbols-outlined text-title-md">construction</span><span>Repair Plan</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-primary-container font-title-sm text-title-sm hover:bg-inverse-surface hover:text-on-primary transition-colors" data-path="evaluation-and-analytics" href="#"><span class="material-symbols-outlined text-title-md">insights</span><span>Evaluation &amp; Analytics</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-primary-container font-title-sm text-title-sm hover:bg-inverse-surface hover:text-on-primary transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-title-md">settings</span><span>Settings</span></a></nav></div><div class="px-space-md flex flex-col gap-space-sm"><div class="p-space-sm rounded-lg bg-inverse-surface"><div class="flex items-center justify-between text-on-primary font-code-sm text-code-sm mb-1"><span>GIS Dispatch Feed</span><span class="w-2 h-2 rounded-full bg-secondary-container"></span></div><p class="font-label-sm text-label-sm text-on-primary-container">Connected to DOT Mesh 04</p></div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-primary-container font-title-sm text-title-sm hover:bg-error-container hover:text-on-error-container transition-colors" data-path="authority-login" href="#"><span class="material-symbols-outlined text-title-md">logout</span><span>Sign Out</span></a></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container font-title-sm text-title-sm text-on-surface"><span class="material-symbols-outlined text-title-sm text-secondary">location_city</span><span class="font-title-sm text-title-sm text-on-surface font-semibold">North Ward District 4</span><span class="material-symbols-outlined text-title-sm text-on-surface-variant">expand_more</span></div><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-low"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-container opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary-container"></span></span><span class="font-code-sm text-code-sm text-on-surface-variant">Live System Sync (12ms)</span></div></div><div class="flex items-center gap-space-md"><button class="relative p-space-sm rounded-lg hover:bg-surface-container transition-colors text-on-surface-variant"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col text-right hidden sm:flex"><span class="font-title-sm text-title-sm text-on-surface leading-tight">Eng. Maria Rodriguez, P.E.</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Chief Municipal Engineer</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDobs0yCFKckbg7uPqdg25u_bX_6alK9ZhzPk6DQJBk8plaKAkOlyYwnemMC-7uh_OvsY6bMjFGQjZzOKlT7sukyOsWWT5UXBYjSpl-csglNK9VNGqlU1scb9VX3MRlmxXn2Mid9IHglln5LTMicSG3yhZUz-k1BszzyglRf88m2wbkOEF4d0FNc9yu_RTLuClFHE9NZAQSLfIxn7akHxK3qJ8wLiVBd3WY0WbKWJPdJCNefZsVfiQKxQ"/></div></div></header><main class="relative pt-16 w-full px-gutter bg-surface min-h-screen"><div class="flex flex-col w-full pb-margin-lg">
+<!-- Top Banner / Metric HUD & Scenario Controller -->
+<section class="py-space-lg flex flex-col xl:flex-row xl:items-end justify-between gap-space-lg">
+<div class="flex flex-col max-w-3xl">
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">Algorithmic Benchmarking Suite</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">DOT Batch Evaluator v4.2</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Planner Evaluation &amp; Benchmarking</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">Compare multi-variable optimization against traditional dispatch heuristics across historical municipal incident datasets.</p>
+</div>
+<!-- Parameter Controls Box -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-wrap items-center gap-space-md">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Benchmark Batch Scenario</span>
+<div class="relative inline-flex items-center">
+<select class="appearance-none bg-surface-container-low font-title-sm text-title-sm text-on-surface pl-3 pr-8 py-1.5 rounded-lg focus:outline-none cursor-pointer" id="scenarioSelector">
+<option selected="" value="monsoon">Heavy Monsoon Season (Q3 - High Density)</option>
+<option value="standard">Standard Dry Season (Q1 - Baseline)</option>
+<option value="arterial">Arterial Corridor Focus (Heavy Transit)</option>
+</select>
+<span class="material-symbols-outlined text-title-sm text-on-surface-variant absolute right-2 pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="h-8 w-px bg-surface-container-high hidden sm:block"></div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Monte Carlo Iterations</span>
+<div class="flex items-center gap-1.5 font-code-sm text-code-sm text-on-surface font-semibold">
+<span class="material-symbols-outlined text-title-sm text-secondary">memory</span>
+<span>120 Batch Runs (±3.2% CI)</span>
+</div>
+</div>
+<button class="px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary font-title-sm text-title-sm flex items-center gap-1.5 hover:bg-inverse-surface transition-all shadow-sm">
+<span class="material-symbols-outlined text-title-sm">replay</span>
+<span>Re-simulate</span>
+</button>
+</div>
+</section>
+<!-- Notice Disclaimer -->
+<div class="mb-space-lg p-space-sm px-space-md rounded-lg bg-surface-container-low text-on-surface-variant flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-title-md text-secondary-container">verified_user</span>
+<span class="font-body-sm text-body-sm">Simulated algorithmic evaluation metrics strictly calibrated for academic review, fiscal auditing, and municipal procurement standards.</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">District 4 Engine Spec: TS-MILP-v9</span>
+</div>
+<!-- Section 1: The 4 Strategy Benchmark Method Cards -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-xl">
+<!-- Card 1: RoadWise AI -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between overflow-hidden">
+<div class="absolute -right-8 -top-8 w-28 h-28 bg-surface-container-high rounded-full blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm">PRIMARY PROPOSED</span>
+<span class="font-code-sm text-code-sm text-secondary font-bold">TOP RANK (1ST)</span>
+</div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-headline-sm text-on-surface">hub</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">RoadWise AI</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed">Multi-factor priority tensor coupled with Traveling Salesperson (TSP) dynamically recalculated routes.</p>
+</div>
+<div class="pt-space-md bg-surface-container-low -mx-space-lg -mb-space-lg p-space-lg rounded-b-xl flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-label-sm text-label-sm text-on-surface-variant">EFFICIENCY SCORE</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">96.8<span class="text-title-sm font-normal text-on-surface-variant">/100</span></span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 96.8%"></div>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant mt-1">Multi-Objective Constraint Engine</span>
+</div>
+</div>
+<!-- Card 2: Severity-Only -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">CONVENTIONAL</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-bold">2ND RANK</span>
+</div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-headline-sm text-on-surface">priority_high</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Severity-Only</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed">Greedy ranking of high-depth incidents with zero spatial routing intelligence or cross-zone consolidation.</p>
+</div>
+<div class="pt-space-md bg-surface-container -mx-space-lg -mb-space-lg p-space-lg rounded-b-xl flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-label-sm text-label-sm text-on-surface-variant">EFFICIENCY SCORE</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">68.2<span class="text-title-sm font-normal text-on-surface-variant">/100</span></span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-on-surface-variant h-full rounded-full" style="width: 68.2%"></div>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant mt-1">High Mileage / Criss-cross Deficit</span>
+</div>
+</div>
+<!-- Card 3: FCFS -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">LEGACY QUEUE</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-bold">3RD RANK</span>
+</div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-headline-sm text-on-surface">schedule</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">FCFS Order</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed">Chronological dispatch based solely on citizen ticket submission timestamps regardless of danger profile.</p>
+</div>
+<div class="pt-space-md bg-surface-container -mx-space-lg -mb-space-lg p-space-lg rounded-b-xl flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-label-sm text-label-sm text-on-surface-variant">EFFICIENCY SCORE</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">42.5<span class="text-title-sm font-normal text-on-surface-variant">/100</span></span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-outline h-full rounded-full" style="width: 42.5%"></div>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant mt-1">High Liability Hazard Delay</span>
+</div>
+</div>
+<!-- Card 4: Random Selection -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">BASELINE CONTROL</span>
+<span class="font-code-sm text-code-sm text-outline font-bold">4TH RANK</span>
+</div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-headline-sm text-on-surface">casino</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Random Allocation</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed">Unweighted stochastic repair sequence operating under the uniform daily asphalt and crew budget.</p>
+</div>
+<div class="pt-space-md bg-surface-container -mx-space-lg -mb-space-lg p-space-lg rounded-b-xl flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-label-sm text-label-sm text-on-surface-variant">EFFICIENCY SCORE</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">29.1<span class="text-title-sm font-normal text-on-surface-variant">/100</span></span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-outline-variant h-full rounded-full" style="width: 29.1%"></div>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant mt-1">Stochastic Scientific Baseline</span>
+</div>
+</div>
+</section>
+<!-- Section 2: Key Comparative Metric Visuals (Bento 3-panel display) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md mb-space-xl">
+<!-- Chart 1: Total Risk Removed -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Total Risk Removed</h3>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low text-on-primary-fixed-variant font-label-sm text-label-sm">HIGHER = BETTER</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg">Percentage of structural accident hazard mitigated within 48-hr shift cycle.</p>
+</div>
+<!-- Horizontal Stack Visual -->
+<div class="flex flex-col gap-space-md">
+<!-- RoadWise -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-title-sm text-title-sm">
+<span class="font-semibold text-on-surface flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>RoadWise AI
+            </span>
+<span class="font-bold text-on-surface font-headline-sm text-headline-sm">84.6%</span>
+</div>
+<div class="h-3.5 w-full bg-surface-container rounded-full overflow-hidden p-0.5">
+<div class="h-full bg-primary-container rounded-full transition-all duration-700" style="width: 84.6%"></div>
+</div>
+</div>
+<!-- Severity-Only -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-title-sm text-title-sm">
+<span class="text-on-surface-variant">Severity-Only</span>
+<span class="font-semibold text-on-surface">71.2%</span>
+</div>
+<div class="h-2.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-surface-tint rounded-full" style="width: 71.2%"></div>
+</div>
+</div>
+<!-- FCFS -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-title-sm text-title-sm">
+<span class="text-on-surface-variant">FCFS Order</span>
+<span class="font-semibold text-on-surface">48.5%</span>
+</div>
+<div class="h-2.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-outline rounded-full" style="width: 48.5%"></div>
+</div>
+</div>
+<!-- Random -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-title-sm text-title-sm">
+<span class="text-on-surface-variant">Random Baseline</span>
+<span class="font-semibold text-on-surface">32.1%</span>
+</div>
+<div class="h-2.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant rounded-full" style="width: 32.1%"></div>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-sm bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between text-on-surface">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Gain Over Legacy FCFS</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">+74.4% net safety</span>
+</div>
+</div>
+<!-- Chart 2: Total Travel Distance (Lower is better) -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Fleet Travel Distance</h3>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low text-on-primary-fixed-variant font-label-sm text-label-sm">LOWER = BETTER</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg">Asphalt truck transit kilometers across municipal ward per work quota.</p>
+</div>
+<!-- Distance bars -->
+<div class="flex flex-col gap-space-md">
+<!-- RoadWise -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-title-sm text-title-sm">
+<span class="font-semibold text-on-surface flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>RoadWise AI
+            </span>
+<span class="font-bold text-on-surface font-headline-sm text-headline-sm">18.4 km</span>
+</div>
+<div class="h-3.5 w-full bg-surface-container rounded-full overflow-hidden p-0.5">
+<!-- 18.4km of 45km scale = ~40% -->
+<div class="h-full bg-secondary-container rounded-full transition-all duration-700" style="width: 40.8%"></div>
+</div>
+</div>
+<!-- Severity-Only -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-title-sm text-title-sm">
+<span class="text-on-surface-variant">Severity-Only</span>
+<span class="font-semibold text-on-surface">34.2 km</span>
+</div>
+<div class="h-2.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-surface-tint rounded-full" style="width: 76%"></div>
+</div>
+</div>
+<!-- FCFS -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-title-sm text-title-sm">
+<span class="text-on-surface-variant">FCFS Order</span>
+<span class="font-semibold text-on-surface">41.8 km</span>
+</div>
+<div class="h-2.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 92.8%"></div>
+</div>
+</div>
+<!-- Random -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-title-sm text-title-sm">
+<span class="text-on-surface-variant">Random Baseline</span>
+<span class="font-semibold text-on-surface">39.5 km</span>
+</div>
+<div class="h-2.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant rounded-full" style="width: 87.7%"></div>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-sm bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between text-on-surface">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Fuel &amp; Transit Cut</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">-56.0% vs FCFS</span>
+</div>
+</div>
+<!-- Chart 3: High-Severity Pothole Coverage -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">High-Severity Coverage</h3>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low text-on-primary-fixed-variant font-label-sm text-label-sm">HAZARD PREVENTION</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg">Proportion of Grade 4 &amp; 5 craters sealed within statutory 24-hr SLAs.</p>
+</div>
+<!-- Coverage comparison -->
+<div class="flex flex-col gap-space-md">
+<!-- RoadWise -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-title-sm text-title-sm">
+<span class="font-semibold text-on-surface flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>RoadWise AI
+            </span>
+<span class="font-bold text-on-surface font-headline-sm text-headline-sm">95.5%</span>
+</div>
+<div class="h-3.5 w-full bg-surface-container rounded-full overflow-hidden p-0.5">
+<div class="h-full bg-primary-container rounded-full" style="width: 95.5%"></div>
+</div>
+</div>
+<!-- Severity-Only -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-title-sm text-title-sm">
+<span class="text-on-surface-variant">Severity-Only</span>
+<span class="font-semibold text-on-surface">98.0%</span>
+</div>
+<div class="h-2.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-surface-tint rounded-full" style="width: 98.0%"></div>
+</div>
+</div>
+<!-- FCFS -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-title-sm text-title-sm">
+<span class="text-on-surface-variant">FCFS Order</span>
+<span class="font-semibold text-on-surface">52.0%</span>
+</div>
+<div class="h-2.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-outline rounded-full" style="width: 52%"></div>
+</div>
+</div>
+<!-- Random -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-title-sm text-title-sm">
+<span class="text-on-surface-variant">Random Baseline</span>
+<span class="font-semibold text-on-surface">35.0%</span>
+</div>
+<div class="h-2.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant rounded-full" style="width: 35%"></div>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-sm bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between text-on-surface">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Near Parity With Greedy</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">95.5% <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">at ½ the distance</span></span>
+</div>
+</div>
+</div>
+<!-- Section 3: Visual Inspection & Operational Reality Splitter -->
+<section class="grid grid-cols-1 xl:grid-cols-12 gap-space-md mb-space-xl">
+<!-- Visual Image / Dispatch Context Card -->
+<div class="xl:col-span-5 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Ground Verification Study</span>
+<span class="font-code-sm text-code-sm text-secondary">Telemetric Audit #814</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Field Crew Route Conformance</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Simulated vehicle fleet telemetry tracks real asphalt repair vehicles operating in North Ward District 4 during live pilot phases.</p>
+</div>
+<div class="relative rounded-lg overflow-hidden h-52 bg-surface-container mb-space-md">
+<img class="w-full h-full object-cover" data-alt="A municipal road repair crew with an asphalt steamroller and heavy support truck paving an urban multi-lane boulevard in daylight, cinematic lighting, industrial safety equipment, and road cones set up." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiFRdPgjG3mU5WYVFCaKgMOm_-3U6JQVc3bHFfY_tDAVNHEyOBtUS0oggY3HxkDenvVofUU_mMClW6OqpDrN3t88-9F7nBtdANM117kzcNDibOdtu47pqHGPYTBaLl8K9s4DsWbpv08ddK-DoCri4PCfleUN-v_d9uHmLLe73ZFbNsaFep7IlCDp-ELqFAjBwUkK7xS28MGq61nppj-EDoqCjlEuO9hwIQy1TTbLWMlTNy6IeSn7hjFg"/>
+<div class="absolute bottom-2 left-2 right-2 bg-inverse-surface/90 backdrop-blur-sm p-space-xs rounded flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-1.5 font-code-sm text-code-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span>Crew Delta-03 (Patcher + Roller)</span>
+</div>
+<span class="font-code-sm text-code-sm text-surface-container-highest">Live GPS Locked</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Asphalt Utilized</span>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">14.8 Tons</p>
+<span class="font-code-sm text-code-sm text-secondary">98.2% Material Yield</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Idle Engine Hours</span>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">1.2 hrs</p>
+<span class="font-code-sm text-code-sm text-secondary">-68% vs Historical</span>
+</div>
+</div>
+</div>
+<!-- Explainability: "What These Results Mean" -->
+<div class="xl:col-span-7 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-headline-sm text-secondary">psychology_alt</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">What These Results Mean</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">Plain-English executive analysis for city council oversight, procurement directors, and public works leadership.</p>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Insight 1: Severity-Only flaw -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex items-start gap-space-md">
+<div class="p-space-xs rounded-lg bg-surface-container-high text-on-surface mt-0.5">
+<span class="material-symbols-outlined text-title-md text-error">alt_route</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">The Severity-Only "Crisscross Trap"</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 leading-relaxed">
+              Greedy algorithms fix the worst individual potholes first, but cause work crews to drive back-and-forth across the district. A crew burns valuable operating hours and diesel fuel crisscrossing wards, sealing fewer total patches per workday.
+            </p>
+</div>
+</div>
+<!-- Insight 2: FCFS flaw -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex items-start gap-space-md">
+<div class="p-space-xs rounded-lg bg-surface-container-high text-on-surface mt-0.5">
+<span class="material-symbols-outlined text-title-md text-secondary">hourglass_disabled</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">The First-Come-First-Served Fallacy</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 leading-relaxed">
+              Queue-based scheduling treats hairline cracks on quiet cul-de-sacs with the same dispatch priority as wheel-shattering craters on high-volume bus routes simply because someone called 311 five minutes earlier. This inflates civic liability.
+            </p>
+</div>
+</div>
+<!-- Insight 3: RoadWise balanced optimum -->
+<div class="p-space-md bg-surface-container-highest rounded-xl flex items-start gap-space-md">
+<div class="p-space-xs rounded-lg bg-primary-container text-on-primary mt-0.5">
+<span class="material-symbols-outlined text-title-md text-secondary-container">auto_graph</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">The RoadWise Pareto Frontier</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 leading-relaxed">
+              By clustering localized clusters along arterial segments, RoadWise achieves <strong class="text-on-surface">95.5% high-severity resolution</strong> while simultaneously <strong class="text-on-surface">reducing vehicle travel distance by 56%</strong> compared to traditional queue models.
+            </p>
+</div>
+</div>
+</div>
+<div class="mt-space-lg flex items-center justify-between pt-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Recommended Implementation: Phase 2 Pilot Authorized</span>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-title-sm text-title-sm transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-title-sm">download</span>
+<span>Download Audit PDF</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section 4: Comprehensive Comparison Table -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col mb-space-lg">
+<div class="p-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm bg-surface-container-lowest">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Comprehensive Strategy Benchmark Matrix</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Quantitative telemetry across 120 randomized municipal damage topologies.</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Model Class:</span>
+<span class="px-space-sm py-1 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface">Fixed-Resource Constrained</span>
+</div>
+</div>
+<!-- Scrollable Table Container -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left font-body-sm text-body-sm text-on-surface">
+<thead class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase">
+<tr>
+<th class="py-space-md px-space-lg">Strategy Name</th>
+<th class="py-space-md px-space-md text-right">Risk Removed (%)</th>
+<th class="py-space-md px-space-md text-right">Total Travel (km)</th>
+<th class="py-space-md px-space-md text-right">High-Severity Fixed (%)</th>
+<th class="py-space-md px-space-md text-right">Cost Per Risk Unit</th>
+<th class="py-space-md px-space-lg text-right">Overall Efficiency</th>
+</tr>
+</thead>
+<tbody class="divide-none">
+<!-- Row 1: RoadWise AI (Winner Row) -->
+<tr class="bg-surface-container-low font-medium hover:bg-surface-container-high/60 transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-container">stars</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">RoadWise AI Planner</span>
+<span class="font-label-sm text-label-sm text-secondary">Pareto-Optimized (TSP + Multi-Factor)</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">84.6%</span>
+<span class="block font-code-sm text-code-sm text-secondary">Rank 1</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">18.4 km</span>
+<span class="block font-code-sm text-code-sm text-secondary">Optimal Route</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-title-md text-title-md text-on-surface font-semibold">95.5%</span>
+<span class="block font-code-sm text-code-sm text-on-surface-variant">42 of 44 Priority</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-title-md text-title-md text-on-surface font-semibold">$38.40</span>
+<span class="block font-code-sm text-code-sm text-secondary font-medium">Lowest Expenditure</span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<span class="inline-flex items-center px-space-md py-1 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold shadow-sm">
+                96.8 / 100
+              </span>
+</td>
+</tr>
+<!-- Row 2: Severity-Only -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant">priority_high</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Severity-Only Dispatch</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Greedy Unconstrained</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-title-md text-title-md text-on-surface font-semibold">71.2%</span>
+<span class="block font-code-sm text-code-sm text-on-surface-variant">Rank 2</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-title-md text-title-md text-on-surface">34.2 km</span>
+<span class="block font-code-sm text-code-sm text-on-surface-variant">+85.8% Transit Penalty</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-title-md text-title-md text-on-surface font-semibold">98.0%</span>
+<span class="block font-code-sm text-code-sm text-on-surface-variant">43 of 44 Priority</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-title-md text-title-md text-on-surface">$59.20</span>
+<span class="block font-code-sm text-code-sm text-on-surface-variant">Fuel Surcharge Drag</span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<span class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-title-sm text-title-sm font-semibold">
+                68.2 / 100
+              </span>
+</td>
+</tr>
+<!-- Row 3: FCFS -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant">sort</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">First-Come-First-Served (FCFS)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Legacy 311 Ticket Order</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-title-md text-title-md text-on-surface font-semibold">48.5%</span>
+<span class="block font-code-sm text-code-sm text-on-surface-variant">Rank 3</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-title-md text-title-md text-error font-medium">41.8 km</span>
+<span class="block font-code-sm text-code-sm text-error">+127% Inefficiency</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-title-md text-title-md text-on-surface">52.0%</span>
+<span class="block font-code-sm text-code-sm text-on-surface-variant">23 of 44 Priority</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-title-md text-title-md text-on-surface">$88.10</span>
+<span class="block font-code-sm text-code-sm text-on-surface-variant">Severe Inefficiency</span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<span class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-title-sm text-title-sm font-semibold">
+                42.5 / 100
+              </span>
+</td>
+</tr>
+<!-- Row 4: Random Selection -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline">help_outline</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface-variant">Random Allocation (Baseline)</span>
+<span class="font-label-sm text-label-sm text-outline">Uniform Monte Carlo</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-title-md text-title-md text-on-surface-variant">32.1%</span>
+<span class="block font-code-sm text-code-sm text-outline">Rank 4</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-title-md text-title-md text-on-surface-variant">39.5 km</span>
+<span class="block font-code-sm text-code-sm text-outline">Stochastic Path</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-title-md text-title-md text-on-surface-variant">35.0%</span>
+<span class="block font-code-sm text-code-sm text-outline">15 of 44 Priority</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-title-md text-title-md text-on-surface-variant">$114.70</span>
+<span class="block font-code-sm text-code-sm text-outline">Baseline Floor</span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<span class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-title-sm text-title-sm">
+                29.1 / 100
+              </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Note -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between text-on-surface-variant text-body-sm font-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-title-sm text-secondary">info</span>
+<span>Standard calculation parameters: $110/hour crew cost, $4.20/gal diesel, 2.4 metric tons standard loadout per crew run.</span>
+</div>
+<span class="font-code-sm text-code-sm">P-Value &lt; 0.001 (Statistically Significant)</span>
+</div>
+</section>
+<!-- Technical Appendix & GIS Validation Snapshot -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Visual Image / GIS Scan -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="relative w-28 h-28 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="High angle thermal aerial view of urban road surface topography mapping asphalt density fractures with computational vector lines and green route nodes, modern civil engineering visualization." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdSJt4dfrnik1MFSagoiW89otoOmtVyX5nDepLEehFOKjCJKiA96bo3wnoF5ilGG_rJIPNjmML9SP3sH0xTMahZX1d_ofmz6Az9bTGfC36xjsvdJecZ5wiDiD5CVb9H9Hga_2c4nIuePBDGiWHVghZ9XPJHPQy_REwfEiHr6AmXGeGr6po65VKrOEZ10RTz_YU9HO0WsoTAEG8ctfbTo6ie2ceOnibBDRP2vdJ_lQR9vZHomB5xKTI7A"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">GIS Route Topology Map</span>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold">Graph-Based Multi-Hub TSP</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">District 4 road networks parsed into 1,480 interconnected arterial nodes with traffic signal synchronization weighting.</p>
+</div>
+</div>
+<!-- Quick Export / Governance Actions -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Procurement Export</span>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold">Ready for City Council Submission</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Includes cryptographic validation signature from District 4 Audit Node.</p>
+</div>
+<button class="px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary font-title-sm text-title-sm hover:bg-inverse-surface transition-colors flex items-center gap-1.5 shrink-0">
+<span class="material-symbols-outlined text-title-sm">verified</span>
+<span>Certify Batch</span>
+</button>
+</div>
+</section>
+</div>
+<script>
+  // Scenario filter interactive micro-interaction
+  document.getElementById('scenarioSelector')?.addEventListener('change', function(e) {
+    const val = e.target.value;
+    // Visually flash table to indicate recalculation
+    const tableBody = document.querySelector('tbody');
+    if (tableBody) {
+      tableBody.style.opacity = '0.4';
+      setTimeout(() => {
+        tableBody.style.opacity = '1';
+      }, 250);
+    }
+  });
+</script></main></div></body></html>

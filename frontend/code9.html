@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>RoadWise AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#eff4ff", "on-primary-fixed-variant": "#3f465c", "secondary-fixed": "#ffddb8", "primary-fixed": "#dae2fd", "inverse-primary": "#bec6e0", "tertiary-fixed-dim": "#93ccff", "on-error-container": "#93000a", "on-surface-variant": "#45464d", "on-tertiary-fixed": "#001d31", "on-tertiary-fixed-variant": "#004b73", "inverse-surface": "#213145", "on-tertiary": "#ffffff", "primary-fixed-dim": "#bec6e0", "surface-tint": "#565e74", "inverse-on-surface": "#eaf1ff", "outline": "#76777d", "secondary": "#855300", "on-secondary-container": "#684000", "surface-bright": "#f8f9ff", "surface-container-high": "#dce9ff", "on-background": "#0b1c30", "tertiary-fixed": "#cce5ff", "on-error": "#ffffff", "on-primary-container": "#7c839b", "on-primary": "#ffffff", "error": "#ba1a1a", "on-surface": "#0b1c30", "surface-container-highest": "#d3e4fe", "on-secondary": "#ffffff", "background": "#f8f9ff", "surface-dim": "#cbdbf5", "surface-container-lowest": "#ffffff", "primary": "#000000", "secondary-container": "#fea619", "tertiary": "#000000", "error-container": "#ffdad6", "tertiary-container": "#001d31", "surface-variant": "#d3e4fe", "on-tertiary-container": "#188ace", "on-primary-fixed": "#131b2e", "outline-variant": "#c6c6cd", "primary-container": "#131b2e", "secondary-fixed-dim": "#ffb95f", "on-secondary-fixed-variant": "#653e00", "on-secondary-fixed": "#2a1700", "surface": "#f8f9ff", "surface-container": "#e5eeff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-sm": "1rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xl": "2rem", "margin": "2rem", "gutter": "1.5rem", "space-lg": "1.5rem", "margin-lg": "3rem", "margin-sm": "1rem", "space-xs": "0.25rem" }, "fontFamily": { "label-sm": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "title-sm": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "title-md": ["Inter"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Inter"], "code-sm": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Inter"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "title-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "code-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="RoadWise AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XLdD17Nx3wtOikKjjeJHupsQlb4X2Tnh0NlKFMWi05T0ozE-745sg18T4sfeHpNrpaOGdC9Toru8I6C9yOOikGV3kAjDenYW0-6Tz7nh00jHBzjT9eCE1yHvpXAOs0JZBcsFMYaKPOpHbd6EGM5fEktavYEs-FBn1PxD2SivnJeS_X0nXfGMYs6aAsgxd5FFBgI91S2wUAeIQPpYW3VIsU-rv71BcBQZxEOjQrGdAvspmTAuz_m3ESqP77"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">RoadWise<span class="text-secondary-container">.AI</span></span></a><span class="hidden lg:inline-flex items-center px-space-sm py-space-xs rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase">Civic Portal</span></div><nav class="hidden md:flex items-center gap-space-xs" data-active-classes="bg-surface-container text-on-surface font-title-sm text-title-sm rounded-lg"><a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#">Home</a><a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="report-a-pothole" href="#">Report a Pothole</a><a aria-current="page" class="px-space-md py-space-sm transition-colors bg-surface-container text-on-surface font-title-sm text-title-sm rounded-lg" data-path="track-report" href="#">Track Report</a><a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="public-road-map" href="#">Public Road Map</a><a class="px-space-md py-space-sm rounded-lg font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="how-it-works" href="#">How It Works</a></nav><div class="flex items-center gap-space-sm"><a class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-primary-container text-on-primary rounded-lg font-title-sm text-title-sm shadow-[0_1px_8px_rgba(0,0,0,0.04)] hover:bg-inverse-surface transition-colors" data-path="authority-login" href="#"><span class="material-symbols-outlined text-title-sm">lock</span><span>Authority Login</span></a></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-16rem)]"><div class="flex flex-col w-full">
+<!-- Subtle Spatial Ambience Layer -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[840px] h-[340px] bg-gradient-to-b from-primary-fixed/30 via-surface-container-high/20 to-transparent blur-3xl pointer-events-none rounded-full"></div>
+<!-- Centered Editorial Header & Search Chamber -->
+<div class="max-w-5xl mx-auto px-margin pt-space-xl pb-space-lg relative z-10">
+<!-- Section Title Area -->
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider mb-space-sm shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+          Civic Audit Stream • Live Telemetry
+        </div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight mb-space-xs">
+          Track Your Report
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Find out the latest status of the pothole you reported. Real-time triangulation between AI computer vision and municipal field dispatch.
+        </p>
+</div>
+<!-- Prominent Search Console Panel -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg md:p-space-xl">
+<label class="block font-title-sm text-title-sm text-on-surface mb-space-xs" for="report-search-input">
+          Enter your report ID
+        </label>
+<div class="flex flex-col sm:flex-row items-stretch gap-space-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-title-md pointer-events-none">
+              search_check_2
+            </span>
+<input class="w-full h-12 pl-11 pr-space-md rounded-lg bg-surface-container-low text-on-surface font-title-md text-title-md placeholder:text-outline/70 focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" id="report-search-input" placeholder="Example: RW-2026-00125" type="text" value="RW-2026-00125"/>
+</div>
+<button class="h-12 px-space-xl rounded-lg bg-primary-container text-on-primary font-title-sm text-title-sm inline-flex items-center justify-center gap-space-xs shadow-sm hover:bg-inverse-surface transition-all active:scale-[0.99]" id="status-search-btn" type="button">
+<span class="material-symbols-outlined text-title-md">manage_search</span>
+<span>Check Status</span>
+</button>
+</div>
+<!-- Quick Switcher Example Chips -->
+<div class="mt-space-md pt-space-md flex flex-wrap items-center gap-space-xs text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline mr-space-xs">Quick Inspect:</span>
+<button class="preset-chip px-space-sm py-space-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-code-sm text-code-sm transition-colors shadow-sm inline-flex items-center gap-1 active:scale-95" data-load-id="RW-2026-00125" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+            RW-2026-00125 (Active)
+          </button>
+<button class="preset-chip px-space-sm py-space-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-code-sm text-code-sm transition-colors shadow-sm inline-flex items-center gap-1 active:scale-95" data-load-id="RW-2026-00089" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+            RW-2026-00089 (Resolved)
+          </button>
+<button class="preset-chip px-space-sm py-space-xs rounded-full bg-surface-container-low hover:bg-error-container text-on-surface-variant hover:text-on-error-container font-code-sm text-code-sm transition-colors shadow-sm inline-flex items-center gap-1 active:scale-95" data-load-id="INVALID_TEST" type="button">
+<span class="material-symbols-outlined text-label-sm">warning</span>
+            Simulate: Invalid ID
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Dynamic Content Stage -->
+<div class="max-w-5xl mx-auto w-full px-margin pb-margin-lg space-y-space-lg">
+<!-- Active Report Card Container: RW-2026-00125 -->
+<section class="flex flex-col gap-space-lg" id="report-view-success">
+<!-- Primary Bento Summary Unit -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden">
+<!-- Top Status Ribbon -->
+<div class="bg-surface-container-low px-space-lg py-space-md flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container text-primary-container">
+<span class="material-symbols-outlined text-title-md">pin_drop</span>
+</span>
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Incident Reference</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight" id="rendered-report-id">RW-2026-00125</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-space-sm py-space-xs rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm uppercase tracking-wide shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+              Critical (Level 4/5) • High Traffic Corridor
+            </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-space-xs rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm uppercase tracking-wide shadow-sm">
+<span class="material-symbols-outlined text-label-sm text-secondary-container">engineering</span>
+              Repair Scheduled
+            </span>
+</div>
+</div>
+<!-- Details Grid & Image Preview Splitter -->
+<div class="p-space-lg md:p-space-xl grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<!-- Geospatial & Temporal Telemetry (8 cols) -->
+<div class="lg:col-span-7 flex flex-col justify-between space-y-space-md">
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Reported Location</span>
+<p class="font-title-md text-title-md text-on-surface flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary-container shrink-0">near_me</span>
+<span>Cross Road 4, Near Metro Pillar 118, Outer Ring Road</span>
+</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant pl-7">
+                Arterial Highway Section 9A • GPS: 12.9234° N, 77.6842° E • Ward 14 East
+              </p>
+</div>
+<div class="grid grid-cols-2 gap-space-md bg-surface-container-low p-space-md rounded-lg">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Submitted On</span>
+<span class="font-title-sm text-title-sm text-on-surface block mt-0.5">Oct 24, 2026</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">09:15 AM IST</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Dispatch Allocation</span>
+<span class="font-title-sm text-title-sm text-on-surface block mt-0.5">Ward Team B</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Rapid Patch Crew #3</span>
+</div>
+</div>
+<!-- Mini Sparkline / Hazard Severity Indicator -->
+<div class="bg-surface-container rounded-lg p-space-md flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary-container shadow-sm">
+<span class="material-symbols-outlined text-title-md">troubleshoot</span>
+</div>
+<div>
+<h4 class="font-title-sm text-title-sm text-on-surface">AI Model Confidence</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Spatial triangulation score: 96.4%</p>
+</div>
+</div>
+<svg class="w-24 h-8 text-secondary-container shrink-0" fill="none" preserveaspectratio="none" viewbox="0 0 100 30">
+<path d="M0 25 L20 22 L40 18 L60 8 L80 12 L100 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<path d="M0 25 L20 22 L40 18 L60 8 L80 12 L100 4 L100 30 L0 30 Z" fill="currentColor" fill-opacity="0.12"></path>
+</svg>
+</div>
+</div>
+<!-- Pothole Computer Vision Preview Tile (5 cols) -->
+<div class="lg:col-span-5 flex flex-col items-center justify-center">
+<div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container shadow-sm group">
+<!-- AI Inspection Target Image with strict prompt -->
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close-up crisp forensic photograph of a deep jagged asphalt pothole on a suburban high-traffic asphalt roadway with clear white municipal lane markings, sharp daylight casting high-contrast shadows inside the pit showing coarse gravel texture, modern institutional road inspection style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtBsA2uRN4rU2QWDvavQOA6NR2cIBuIW6NtzO7V2hhMXKfRsjDOxpSHBdlrwI0bHukQeOdOyi2ea-4cZyxQXeLar3XjkJI7tWkR-pVblaQSlg5N0UkEf4ttEXtFoK_tHxZHZiN62uK349hPxjEwO3RsdlQedklvkyXgGhiyDLyBT-eFIj-na2Ug8pGH6B8znVNi1bwPEKEUaXzQnwoeA2vRzmKrMmSArH9YDxdpTM7AGNi5Vlj_gMnvQ"/>
+<!-- Computer Vision Overlays -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent pointer-events-none"></div>
+<!-- AI Augmented Reality Bounding Box -->
+<div class="absolute top-1/4 left-1/4 right-1/4 bottom-1/4 border-2 border-dashed border-secondary-container/90 rounded pointer-events-none flex flex-col justify-between p-1">
+<span class="font-code-sm text-[10px] bg-secondary-container text-on-surface px-1 py-0.5 rounded font-bold self-start leading-none">
+                  AI: CRATER_DEPTH ~8.2cm
+                </span>
+<span class="font-code-sm text-[9px] text-white bg-primary-container/80 px-1 rounded self-end leading-none">
+                  SEVERITY: 0.94
+                </span>
+</div>
+<!-- Metadata Badges bottom anchored -->
+<div class="absolute bottom-space-sm left-space-sm right-space-sm flex items-center justify-between text-on-primary font-code-sm text-code-sm">
+<span class="inline-flex items-center gap-1 bg-primary-container/90 px-space-xs py-0.5 rounded shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary-container">verified</span>
+                  Verified Road Asset
+                </span>
+<span class="bg-surface-container-lowest/80 text-on-surface px-space-xs py-0.5 rounded shadow-sm">
+                  CAM_ID #8841-B
+                </span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-space-xs text-center">
+              Field evidence analyzed with Municipal Vision Engine v4.2
+            </p>
+</div>
+</div>
+</div>
+<!-- 4-Stage Municipal Lifecycle Timeline -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg md:p-space-xl">
+<div class="flex items-center justify-between mb-space-lg">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Remediation Progress Stream</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Chronological audit log synchronized with Department of Public Works.</p>
+</div>
+<span class="hidden sm:inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+            Stage 3 of 4 Active
+          </span>
+</div>
+<!-- Vertical Stepper (Responsive with rich typographic cards) -->
+<div class="relative pl-6 md:pl-8 space-y-space-lg before:content-[''] before:absolute before:left-3 md:before:left-4 before:top-3 before:bottom-3 before:w-0.5 before:bg-surface-container-high">
+<!-- Stage 1: Submitted (Completed) -->
+<div class="relative group">
+<div class="absolute -left-6 md:-left-8 top-1 w-6 h-6 md:w-8 md:h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-[#065f46] shadow-md ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-title-md font-bold" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="bg-surface-container-low/70 rounded-lg p-space-md hover:bg-surface-container-low transition-colors">
+<div class="flex flex-wrap items-center justify-between gap-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">1. Submitted</h3>
+<span class="px-space-xs py-0.5 rounded-full bg-[#d1fae5] text-[#065f46] font-label-sm text-[10px] uppercase font-bold">Logged</span>
+</div>
+<time class="font-code-sm text-code-sm text-on-surface-variant">Oct 24, 2026 • 09:15 AM</time>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                Your report has been received and logged into municipal central intake queue. Geo-coordinates bound to arterial network node # ORR-118.
+              </p>
+</div>
+</div>
+<!-- Stage 2: Under Review (Completed) -->
+<div class="relative group">
+<div class="absolute -left-6 md:-left-8 top-1 w-6 h-6 md:w-8 md:h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-[#065f46] shadow-md ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-title-md font-bold" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="bg-surface-container-low/70 rounded-lg p-space-md hover:bg-surface-container-low transition-colors">
+<div class="flex flex-wrap items-center justify-between gap-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">2. Under Review</h3>
+<span class="px-space-xs py-0.5 rounded-full bg-[#d1fae5] text-[#065f46] font-label-sm text-[10px] uppercase font-bold">Validated</span>
+</div>
+<time class="font-code-sm text-code-sm text-on-surface-variant">Oct 24, 2026 • 11:30 AM</time>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                AI vision verified depth (8cm); Field inspector validated traffic priority against municipal density indices. Escalated to Tier-1 Rapid Response.
+              </p>
+</div>
+</div>
+<!-- Stage 3: Repair Scheduled (Active In-Progress) -->
+<div class="relative group">
+<div class="absolute -left-6 md:-left-8 top-1 w-6 h-6 md:w-8 md:h-8 rounded-full bg-secondary-container flex items-center justify-center text-primary shadow-md ring-4 ring-surface-container-lowest animate-bounce">
+<span class="material-symbols-outlined text-title-md font-bold">pending</span>
+</div>
+<div class="bg-secondary-fixed/40 rounded-lg p-space-md shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">3. Repair Scheduled</h3>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-surface font-label-sm text-[10px] uppercase font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+                    In-Progress
+                  </span>
+</div>
+<time class="font-code-sm text-code-sm text-secondary font-bold">Target: Oct 26, 2026</time>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium">
+                Included in Ward Route Plan #14 for cold-mix patch crew. Work order #WO-8911 generated and batch-dispatched to heavy asphalt maintenance truck #04.
+              </p>
+<!-- Mini Crew Operational Info -->
+<div class="mt-space-sm pt-space-xs flex flex-wrap items-center gap-space-md font-body-sm text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-label-md text-secondary-container">group</span>
+                  Crew: Ward Team B (Lead: Supv. Ramanathan)
+                </span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-label-md text-secondary-container">thermostat</span>
+                  Weather Clearance: Favorable (Dry Window 48h)
+                </span>
+</div>
+</div>
+</div>
+<!-- Stage 4: Fixed (Pending) -->
+<div class="relative opacity-60 group">
+<div class="absolute -left-6 md:-left-8 top-1 w-6 h-6 md:w-8 md:h-8 rounded-full bg-surface-container flex items-center justify-center text-outline shadow-sm ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-title-md">radio_button_unchecked</span>
+</div>
+<div class="bg-surface-container-low/40 rounded-lg p-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-title-md text-title-md text-on-surface-variant font-semibold">4. Fixed &amp; Quality Verified</h3>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-outline font-label-sm text-[10px] uppercase font-semibold">Pending</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">Awaiting completion</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Repair crew completes patching and uploads resolution photo. AI verification confirms surface roughness grade index within standard tolerances.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Public Decision Explainability Callout -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex items-start gap-space-md shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-headline-sm">account_tree</span>
+</div>
+<div class="space-y-space-xs flex-1">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold flex items-center gap-2">
+            Why is repair timing variable?
+            <span class="font-label-sm text-[11px] px-2 py-0.5 bg-surface-container rounded-full text-on-surface-variant font-normal">Municipal Algorithm Transparency</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Municipal priority relies on algorithmic calculations combining four dynamic weights: <strong class="text-on-surface">safety hazard severity</strong> (crater depth and perimeter), <strong class="text-on-surface">arterial road traffic load</strong> (bus routes and peak hour transit volume), <strong class="text-on-surface">weather constraints</strong> (asphalt adhesion requires rain-free windows), and <strong class="text-on-surface">allocated crew budget</strong> across municipal sub-divisions.
+          </p>
+<div class="pt-space-xs flex items-center gap-space-md text-on-surface font-title-sm text-title-sm">
+<a class="hover:text-secondary-container inline-flex items-center gap-1 transition-colors" data-path="how-it-works" href="#">
+<span>Read complete prioritization policy</span>
+<span class="material-symbols-outlined text-label-md">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Alternative State 1: Invalid / Not Found State (Initially Hidden via JS toggling) -->
+<section class="hidden bg-surface-container-lowest rounded-xl shadow-md p-space-xl text-center" id="report-view-notfound">
+<div class="max-w-md mx-auto flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-error-container text-on-error-container flex items-center justify-center mb-space-md shadow-sm">
+<span class="material-symbols-outlined text-headline-lg">search_off</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Report ID Not Found</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+          We could not locate an active or archived municipal maintenance record matching <span class="font-code-sm text-code-sm font-bold text-on-surface bg-surface-container px-1 py-0.5 rounded" id="missing-id-tag">RW-XXXX</span>.
+        </p>
+<!-- Troubleshooting Guidance Box -->
+<div class="w-full text-left bg-surface-container-low p-space-md rounded-lg mb-space-lg space-y-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<p class="font-title-sm text-title-sm text-on-surface">Quick Verification Tips:</p>
+<ul class="list-disc list-inside space-y-1">
+<li>Ensure the prefix is properly formatted as <code class="font-code-sm text-code-sm font-semibold">RW-YYYY-XXXXX</code>.</li>
+<li>If you submitted within the last 15 minutes, initial gateway synchronization may take a moment.</li>
+<li>Check your SMS or confirmation email receipt for the exact receipt token.</li>
+</ul>
+</div>
+<div class="flex flex-col sm:flex-row gap-space-sm w-full justify-center">
+<button class="px-space-lg py-space-sm rounded-lg bg-primary-container text-on-primary font-title-sm text-title-sm shadow-sm hover:bg-inverse-surface transition-colors" onclick="resetToDefaultReport()" type="button">
+            Load Sample Report (RW-2026-00125)
+          </button>
+<a class="px-space-lg py-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm transition-colors inline-flex items-center justify-center" data-path="report-a-pothole" href="#">
+            Submit New Incident
+          </a>
+</div>
+</div>
+</section>
+<!-- Alternative State 2: Simulation Accordion / State Explorer for Evaluators -->
+<div class="bg-surface-container rounded-xl shadow-sm overflow-hidden">
+<button class="w-full px-space-lg py-space-md flex items-center justify-between text-left hover:bg-surface-container-high/60 transition-colors" id="accordion-toggle" type="button">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-title-md">tune</span>
+<span class="font-title-sm text-title-sm text-on-surface">Civic Platform Resilience &amp; Diagnostic Previews</span>
+</div>
+<span class="material-symbols-outlined text-outline transition-transform duration-200" id="accordion-icon">expand_more</span>
+</button>
+<div class="hidden px-space-lg pb-space-lg pt-space-xs space-y-space-md" id="accordion-content">
+<!-- Offline Reconnecting Mock Notification -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md flex items-start gap-space-sm shadow-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-title-sm animate-spin">sync</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-on-surface">Offline Buffer Active • Gateway Sync Resilient</span>
+<span class="font-label-sm text-label-sm bg-surface-container text-on-surface-variant px-space-xs py-0.5 rounded">Failover Protocol</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              If citizen mobile connection drops in poor signal corridors, submitted images and GPS coordinates are indexed locally and queue-pushed as soon as LTE or municipal Wi-Fi reconnects.
+            </p>
+</div>
+</div>
+<!-- Privacy & Protection Safeguard -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md flex items-start gap-space-sm shadow-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-title-sm">shield</span>
+</div>
+<div class="flex-1">
+<span class="font-title-sm text-title-sm text-on-surface block">Privacy Assurance &amp; Data Sanitization</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Your personal contact info is protected under Municipal Data Regulations and never displayed publicly. All license plates and facial contours captured in inspection frames are blurred cryptographically prior to database persistence.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Need Immediate Assistance / Escalation Strip -->
+<div class="flex flex-col sm:flex-row items-center justify-between p-space-md bg-surface-container-lowest rounded-xl shadow-sm gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-container">emergency</span>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface block">Is this crater actively causing vehicle damage or an accident?</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Trigger immediate high-hazard protocol with 24/7 Traffic Control.</span>
+</div>
+</div>
+<a class="shrink-0 px-space-md py-space-xs rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm transition-colors inline-flex items-center gap-1" data-path="contact" href="#">
+<span>Urgent Escalation</span>
+<span class="material-symbols-outlined text-label-md">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Interactive Search & State Handler Script -->
+<script>
+    (function initTrackReportLogic() {
+      const searchInput = document.getElementById('report-search-input');
+      const searchBtn = document.getElementById('status-search-btn');
+      const successView = document.getElementById('report-view-success');
+      const notFoundView = document.getElementById('report-view-notfound');
+      const renderedReportId = document.getElementById('rendered-report-id');
+      const missingIdTag = document.getElementById('missing-id-tag');
+      const accordionBtn = document.getElementById('accordion-toggle');
+      const accordionContent = document.getElementById('accordion-content');
+      const accordionIcon = document.getElementById('accordion-icon');
+      const chips = document.querySelectorAll('.preset-chip');
+
+      function handleSearch() {
+        const val = (searchInput.value || '').trim();
+        if (!val || val.toUpperCase() === 'INVALID_TEST' || val.toUpperCase().includes('UNKNOWN') || val === '00000') {
+          successView.classList.add('hidden');
+          notFoundView.classList.remove('hidden');
+          missingIdTag.textContent = val || 'RW-[EMPTY]';
+        } else {
+          notFoundView.classList.add('hidden');
+          successView.classList.remove('hidden');
+          renderedReportId.textContent = val.toUpperCase();
+        }
+      }
+
+      window.resetToDefaultReport = function() {
+        searchInput.value = 'RW-2026-00125';
+        handleSearch();
+      };
+
+      searchBtn.addEventListener('click', handleSearch);
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') handleSearch();
+      });
+
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          const loadId = chip.getAttribute('data-load-id');
+          searchInput.value = loadId;
+          handleSearch();
+        });
+      });
+
+      // Accordion toggle
+      accordionBtn.addEventListener('click', () => {
+        const isHidden = accordionContent.classList.contains('hidden');
+        if (isHidden) {
+          accordionContent.classList.remove('hidden');
+          accordionIcon.textContent = 'expand_less';
+        } else {
+          accordionContent.classList.add('hidden');
+          accordionIcon.textContent = 'expand_more';
+        }
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low mt-margin-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-7xl mx-auto px-margin py-margin-lg"><div class="grid grid-cols-1 md:grid-cols-4 gap-gutter"><div class="md:col-span-1"><div class="flex items-center gap-space-sm mb-space-sm"><img alt="RoadWise AI Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XLdD17Nx3wtOikKjjeJHupsQlb4X2Tnh0NlKFMWi05T0ozE-745sg18T4sfeHpNrpaOGdC9Toru8I6C9yOOikGV3kAjDenYW0-6Tz7nh00jHBzjT9eCE1yHvpXAOs0JZBcsFMYaKPOpHbd6EGM5fEktavYEs-FBn1PxD2SivnJeS_X0nXfGMYs6aAsgxd5FFBgI91S2wUAeIQPpYW3VIsU-rv71BcBQZxEOjQrGdAvspmTAuz_m3ESqP77"/><span class="font-headline-sm text-headline-sm text-on-surface">RoadWise.AI</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Intelligent civic infrastructure diagnostics, real-time spatial triangulation, and accountable municipal remediation for safer thoroughfares.</p></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Platform</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="report-a-pothole" href="#">Report a Hazard</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="track-report" href="#">Status Verification</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="public-road-map" href="#">Civic GIS Map</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Information</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">About</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy" href="#">Privacy &amp; Audits</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">Contact</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Municipal Governance</span><p class="font-body-sm text-body-sm text-on-surface-variant">Authorized personnel access only. Telemetry encryption validated.</p><a class="inline-flex items-center gap-space-xs font-title-sm text-title-sm text-on-surface hover:text-secondary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-title-sm">admin_panel_settings</span><span>Authority Portal</span></a></div></div><div class="mt-margin-lg pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm"><p>© 2025 RoadWise AI Civic Infrastructure Platform. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="inline-flex items-center gap-space-xs font-code-sm text-code-sm"><span class="w-2 h-2 rounded-full bg-secondary-container"></span>Civic Telemetry v4.2 Active</span></div></div></div></footer></body></html>
