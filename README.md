@@ -8,6 +8,8 @@ RoadSense is a prototype municipal pothole incident review tool. It builds on th
 
 <p align="center">
   <img src="temp/img1.png" alt="RoadSense screenshot 1" width="48%" />
+</p>
+<p align="center">  
   <img src="temp/img2.png" alt="RoadSense screenshot 2" width="48%" />
 </p>
 
