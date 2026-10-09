@@ -1,0 +1,43 @@
+**Artificial Intelligence & Computer Vision**
+
+* **Ultralytics YOLOv8:** 
+A computer vision framework used to scan road imagery, detect potholes, and output bounding boxes along with severity estimates based on relative box area.
+
+
+
+**Algorithmic Planning & Mathematics**
+
+* **NumPy & SciPy:** 
+Used to execute the math behind the budgeted planner, specifically calculating the 0/1 knapsack algorithm to maximize total risk removed within budget limits.
+
+
+* **scikit-learn:** 
+Provides the DBSCAN clustering algorithm, which groups geographically nearby potholes so maintenance crews can efficiently fix multiple sites in one trip.
+
+
+
+**Backend & Data Storage**
+
+* **Python & FastAPI:** 
+Powers the core backend architecture to run inference, calculate dynamic priority scores, and handle API requests from the dashboard.
+
+
+* **SQLite or PostgreSQL:** 
+Acts as the database to store structured pothole records, tracking variables like coordinates, status, and report history.
+
+
+
+**Geospatial Intelligence**
+
+* **OSMnx & Overpass API:** 
+Extracts real-world road classifications from OpenStreetMap, allowing the system to assign higher importance to damage on major highways compared to local streets.
+
+
+**Frontend UI & Visualization**
+
+* **React:** 
+Serves as the foundation for the interactive web dashboard.
+
+
+* **Leaflet:** 
+Renders the interactive map component to display pothole markers that are color-coded by their calculated priority.
