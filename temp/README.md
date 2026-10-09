@@ -139,3 +139,61 @@ Method: simulate 100+ random scenarios (random pothole sets and budgets), report
 - **No ground truth for "correct" priority:** evaluate on *risk removed under budget*, a clearly defined metric.
 - **Weak map data:** fall back to a synthetic road graph if OSM extraction is slow.
 
+## Application Structure
+
+The executable application is split into two independently run services. The existing files in `frontend/code*.html` remain standalone UI prototypes and are not part of the React build.
+
+```text
+backend/
+    app/
+        adapters/      External-service boundaries (camera placeholder)
+        api/routes/    Versioned HTTP endpoints
+        repositories/  SQLite data access and sample seeding
+        schemas/       Request and response models
+        services/      Domain logic such as repair estimation
+    tests/
+frontend/
+    src/             React UI, API client, and styles
+    index.html       Vite entry point
+    code*.html       Preserved design prototypes
+```
+
+### Run Locally
+
+Use Python 3.10+ and Node.js 20+.
+
+Configure the local official account and session key:
+
+```bash
+cd backend
+cp .env.example .env
+# Replace the demo password and session secret in .env.
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload --env-file .env
+```
+
+In another terminal, start the dashboard:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open `http://localhost:5173`. The API health endpoint is `http://127.0.0.1:8000/health`; interactive API documentation is at `http://127.0.0.1:8000/docs`.
+
+### Current API Surface
+
+- `POST /api/v1/auth/login`, `GET /api/v1/auth/me`, and `POST /api/v1/auth/logout` manage the official HttpOnly session cookie.
+- `GET /api/v1/incidents`, `GET /api/v1/incidents/{id}/camera-check`, and `POST /api/v1/incidents/estimate` require an official session.
+- `POST /pothole_locations` accepts the Android app's URL-encoded `pothole_location[latitude]` and `pothole_location[longitude]` fields, or JSON coordinates.
+- `GET /pothole_locations.json` returns saved observations as `latitude`, `longitude`, and `date_time`, matching the Android model.
+
+For a local demo without a `.env` file, the development-only credentials are `official@roadsense.local` / `RoadSense-Demo-2026!`. These are not suitable for real officials or deployment. Production mode refuses sign-in without configured credentials and a session secret; use HTTPS and set `SESSION_COOKIE_SECURE=true` in production.
+
+The API creates `backend/data/roadsense.sqlite3` on first startup and seeds 12 synthetic incidents across Bengaluru and Coimbatore with synthetic repeat observations. Seed-version upgrades add records once to existing databases without deleting stored incidents. Set `ROAD_SENSE_DB_PATH` to use another SQLite file. New nearby reports within 15 metres are appended to an unresolved incident; pass `source_event_id` to make retries idempotent. The coordinate-only Android client does not supply detection method, confidence, or an event ID, so those values remain unknown unless a richer client sends them.
+
+Camera feeds, OpenStreetMap lookup, and an approved municipal rate card are not connected yet. Sample records and cost rates are for development only and must not be used as verified civic data or operational repair quotes. The configured official login is a single-account prototype, not a production identity-management system; connect the municipality's identity provider before operational use.
+

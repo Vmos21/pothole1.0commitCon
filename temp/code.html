@@ -690,6 +690,107 @@
 </div>
 </div>
 </div>
+<!-- DOWNSTREAM VERIFICATION AND REPAIR ESTIMATE WORKBENCH -->
+<section class="mt-space-lg" id="verification-workbench">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-sm mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">After detection</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Verify incident &amp; estimate repair</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Review location evidence, group repeat reports, and prepare a road-aware estimate.</p>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold uppercase">
+<span class="material-symbols-outlined text-[16px]">science</span> Demo data · integrations offline
+</span>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+<div class="xl:col-span-7 bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Incident verification</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Select a saved detection to review its evidence.</p>
+</div>
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="incident-select">Sample incident</label>
+<select class="h-9 px-2 rounded bg-surface-container-low text-on-surface font-title-sm" id="incident-select">
+<option value="RW-2026-00412">RW-2026-00412 · Outer Ring Road</option>
+<option value="RW-2026-00398">RW-2026-00398 · Indiranagar 100ft Road</option>
+</select>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<article class="p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between gap-2">
+<h4 class="font-title-sm text-title-sm text-on-surface flex items-center gap-1"><span class="material-symbols-outlined text-secondary">videocam</span> Nearby camera evidence</h4>
+<span class="font-code-sm text-code-sm text-outline" id="camera-status">Not checked</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2" id="camera-detail">Camera feed connector is not configured. A location match requires an authorized feed and timestamped frame.</p>
+<button class="mt-3 px-3 py-2 rounded bg-primary-container text-on-primary font-title-sm text-title-sm flex items-center gap-1 hover:bg-inverse-surface" id="camera-demo-button" type="button">
+<span class="material-symbols-outlined text-title-sm">play_arrow</span> Preview demo result
+</button>
+</article>
+<article class="p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between gap-2">
+<h4 class="font-title-sm text-title-sm text-on-surface flex items-center gap-1"><span class="material-symbols-outlined text-secondary">history</span> Repeat-report check</h4>
+<span class="font-code-sm text-code-sm text-outline" id="history-status">Not checked</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2" id="history-detail">Checks nearby records by distance and time to group duplicate reports without losing repeat sightings.</p>
+<button class="mt-3 px-3 py-2 rounded bg-surface-container-high text-on-surface font-title-sm text-title-sm flex items-center gap-1 hover:bg-surface-container-highest" id="history-demo-button" type="button">
+<span class="material-symbols-outlined text-title-sm">manage_search</span> Preview demo result
+</button>
+</article>
+</div>
+<div class="mt-space-sm flex items-start gap-2 p-space-sm rounded-lg border border-outline-variant text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">info</span>
+<p>Repeated sightings indicate persistence; they should update one incident’s evidence history, not create another repair job. Demo results are illustrative and require human review.</p>
+</div>
+<div class="mt-space-sm flex flex-wrap items-center justify-between gap-space-sm border-t border-outline-variant pt-space-sm">
+<span class="font-title-sm text-title-sm text-on-surface" id="review-readiness">Waiting for evidence checks</span>
+<button class="px-3 py-2 rounded bg-surface-container text-on-surface-variant font-title-sm text-title-sm flex items-center gap-1" disabled="" id="stage-review-button" type="button">
+<span class="material-symbols-outlined text-title-sm">fact_check</span> Stage for human review
+</button>
+</div>
+</div>
+<div class="xl:col-span-5 bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-start justify-between gap-2 mb-space-md">
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Road impact &amp; repair estimate</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Road type affects urgency and traffic-control allowance.</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-headline-sm">engineering</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<label class="flex flex-col gap-1 font-label-sm text-label-sm text-on-surface-variant" for="road-class">
+Road classification <span class="font-code-sm text-code-sm">OSM connector: offline</span>
+<select class="h-10 px-2 rounded bg-surface-container-low text-on-surface font-title-sm" id="road-class">
+<option value="local">Local street</option>
+<option value="collector">Collector road</option>
+<option selected="" value="arterial">Arterial road</option>
+<option value="highway">Highway</option>
+</select>
+</label>
+<div class="flex flex-col justify-center p-space-sm rounded bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Public impact</span>
+<span class="font-title-sm text-title-sm text-on-surface" id="road-impact">High · arterial connectivity</span>
+</div>
+<label class="flex flex-col gap-1 font-label-sm text-label-sm text-on-surface-variant" for="repair-area">
+Affected area (m²)
+<input class="h-10 px-2 rounded bg-surface-container-low text-on-surface font-title-sm" id="repair-area" max="100" min="0.1" step="0.1" type="number" value="1.8">
+</label>
+<label class="flex flex-col gap-1 font-label-sm text-label-sm text-on-surface-variant" for="repair-depth">
+Estimated depth (cm)
+<input class="h-10 px-2 rounded bg-surface-container-low text-on-surface font-title-sm" id="repair-depth" max="100" min="0" step="0.1" type="number" value="9.4">
+</label>
+</div>
+<div class="mt-space-sm p-space-md rounded-lg bg-primary-container text-on-primary">
+<div class="flex items-center justify-between gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Illustrative cost range</span>
+<span class="material-symbols-outlined text-secondary-container">currency_rupee</span>
+</div>
+<output class="block font-headline-sm text-headline-sm font-bold mt-1" id="repair-cost">₹12,000 – ₹18,000</output>
+<p class="font-body-sm text-on-primary-container mt-1" id="cost-breakdown">Based on 1.8 m², estimated depth, and arterial traffic control.</p>
+</div>
+<p class="font-code-sm text-code-sm text-on-surface-variant mt-space-sm">Demo assumption: ₹4,800/m² base rate, depth adjustment, and road-class access allowance. Replace with an approved municipal rate card before operational use.</p>
+</div>
+</div>
+</section>
 <!-- QUICK ACTION CALLOUT BAR & OPERATIONAL SHORTCUTS -->
 <div class="mt-space-md p-space-md rounded-xl bg-primary-container text-on-primary shadow-md flex flex-col md:flex-row items-center justify-between gap-space-md">
 <div class="flex items-center gap-space-md">
@@ -718,7 +819,105 @@
 </div>
 <!-- FOOTER NOTE -->
 <div class="mt-space-sm flex items-center justify-between px-space-xs text-on-surface-variant font-code-sm text-code-sm">
-<span>Illustrative municipal demo data. Real-time BBMP Smart City integration configured.</span>
-<span>Authority Core Engine v3.12-PROD • Latency 14ms</span>
+<span>Illustrative municipal demo data. Camera, record-store, road-context, and rate-card integrations are placeholders.</span>
+<span>Authority dashboard prototype • Offline demo</span>
 </div>
-</div></main></div></body></html>
+</div>
+<script>
+  (() => {
+    const cameraButton = document.getElementById('camera-demo-button');
+    const historyButton = document.getElementById('history-demo-button');
+    const stageButton = document.getElementById('stage-review-button');
+    const roadClass = document.getElementById('road-class');
+    const incidentSelect = document.getElementById('incident-select');
+    let cameraReviewed = false;
+    let historyReviewed = false;
+
+    function updateReviewReadiness() {
+      const ready = cameraReviewed && historyReviewed;
+      document.getElementById('review-readiness').textContent = ready
+        ? 'Checks complete · human review required'
+        : 'Waiting for evidence checks';
+      stageButton.disabled = !ready;
+      stageButton.classList.toggle('bg-secondary-container', ready);
+      stageButton.classList.toggle('text-primary-container', ready);
+      stageButton.classList.toggle('bg-surface-container', !ready);
+      stageButton.classList.toggle('text-on-surface-variant', !ready);
+    }
+
+    function updateEstimate() {
+      const area = Number(document.getElementById('repair-area').value);
+      const depth = Number(document.getElementById('repair-depth').value);
+      const classRates = { local: 1200, collector: 2500, arterial: 5000, highway: 9000 };
+      const roadNames = {
+        local: 'Local street · lower network exposure',
+        collector: 'Medium · connects neighborhood routes',
+        arterial: 'High · arterial connectivity',
+        highway: 'Very high · strategic corridor'
+      };
+
+      document.getElementById('road-impact').textContent = roadNames[roadClass.value];
+      if (!Number.isFinite(area) || !Number.isFinite(depth) || area <= 0 || depth < 0) {
+        document.getElementById('repair-cost').textContent = 'Enter valid dimensions';
+        document.getElementById('cost-breakdown').textContent = 'Area must be above zero and depth cannot be negative.';
+        return;
+      }
+
+      const depthFactor = 1 + Math.max(0, depth - 3) * 0.035;
+      const midpoint = area * 4800 * depthFactor + classRates[roadClass.value];
+      const formatRupees = value => new Intl.NumberFormat('en-IN', {
+        style: 'currency', currency: 'INR', maximumFractionDigits: 0
+      }).format(value);
+      document.getElementById('repair-cost').textContent = `${formatRupees(midpoint * 0.8)} – ${formatRupees(midpoint * 1.2)}`;
+      document.getElementById('cost-breakdown').textContent = `Based on ${area.toFixed(1)} m², ${depth.toFixed(1)} cm depth, and ${roadClass.options[roadClass.selectedIndex].text.toLowerCase()} traffic control.`;
+    }
+
+    function loadIncidentSample() {
+      const samples = {
+        'RW-2026-00412': { area: 1.8, depth: 9.4, roadClass: 'arterial' },
+        'RW-2026-00398': { area: 1.2, depth: 8.7, roadClass: 'collector' }
+      };
+      const sample = samples[incidentSelect.value];
+      if (!sample) return;
+
+      document.getElementById('repair-area').value = sample.area;
+      document.getElementById('repair-depth').value = sample.depth;
+      roadClass.value = sample.roadClass;
+      roadClass.selectedIndex = [...roadClass.options].findIndex(option => option.value === sample.roadClass);
+      cameraReviewed = false;
+      historyReviewed = false;
+      document.getElementById('camera-status').textContent = 'Not checked';
+      document.getElementById('camera-detail').textContent = 'Camera feed connector is not configured. A location match requires an authorized feed and timestamped frame.';
+      document.getElementById('history-status').textContent = 'Not checked';
+      document.getElementById('history-detail').textContent = 'Checks nearby records by distance and time to group duplicate reports without losing repeat sightings.';
+      updateEstimate();
+      updateReviewReadiness();
+    }
+
+    cameraButton.addEventListener('click', () => {
+      cameraReviewed = true;
+      document.getElementById('camera-status').textContent = 'Demo only';
+      document.getElementById('camera-detail').textContent = 'Illustrative match: sample frame at 10:42, model confidence 91%. No live camera feed was queried; confirm with an authorized source.';
+      updateReviewReadiness();
+    });
+
+    historyButton.addEventListener('click', () => {
+      historyReviewed = true;
+      document.getElementById('history-status').textContent = 'Demo only';
+      document.getElementById('history-detail').textContent = 'Illustrative result: 3 reports within 20 m over 14 days grouped under this incident. Repeat sightings retained as evidence.';
+      updateReviewReadiness();
+    });
+
+    stageButton.addEventListener('click', () => {
+      document.getElementById('review-readiness').textContent = 'Staged for human review · demo only; no work order created';
+      stageButton.disabled = true;
+    });
+
+    roadClass.addEventListener('change', updateEstimate);
+    incidentSelect.addEventListener('change', loadIncidentSample);
+    document.getElementById('repair-area').addEventListener('input', updateEstimate);
+    document.getElementById('repair-depth').addEventListener('input', updateEstimate);
+    updateEstimate();
+  })();
+</script>
+</main></div></body></html>
